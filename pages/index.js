@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <div>
       <h1 className="bg-lime-500">Hello World</h1>
-      <h2>{data}</h2>
+      <h2>data from firebase: {data}</h2>
     </div>
   );
 }
