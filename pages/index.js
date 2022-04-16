@@ -10,6 +10,7 @@ import {
   GoRepoClone,
   GoRepo,
 } from "react-icons/go";
+import PostStreamCard from "../components/post_stream_card";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAe5UfatD1Z9jfpa7mnJV9mD-1l-j7RdE8",
@@ -73,18 +74,7 @@ export default function Home() {
   return (
     <div>
       {dummyData.map((item) => (
-        <div class="p-6 mb-7 max-w-7xl mx-auto bg-white rounded-xl shadow-none flex items-center hover:shadow-lg cursor-pointer">
-          <div class="shrink-0">
-            {/* <item.icon></item.icon> */}
-            <Image src={item.imageLink} width={200} height={150}></Image>
-          </div>
-          <div class="pl-28 pt-2">
-            <div class="text-xl font-medium text-black break-words">
-              {item.title}
-            </div>
-            <p class="text-slate-500">{item.desription}</p>
-          </div>
-        </div>
+        <PostStreamCard data={dummyData} />
       ))}
     </div>
   );
