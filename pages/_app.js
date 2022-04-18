@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
   <div>
     <Component {...pageProps} />
-    <Navbar bg="light" expand="lg" fixed={'top'}>
+    <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
