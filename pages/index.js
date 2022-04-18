@@ -7,8 +7,9 @@ import {
   GoRepoClone,
   GoRepo,
 } from "react-icons/go";
-import PostStreamCard from "../components/post_stream_card";
+import PostStreamCard from "../components/PostStreamCard";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import Header from "../components/header";
 
 const dummyData = [
   {
@@ -54,5 +55,12 @@ const icons = {
 
 export default function Home() {
   const [allNews, setAllNews] = useState([]);
-  return <div>{dummyData.map((item) => PostStreamCard(item))}</div>;
+  return (
+    <div>
+      <Header tab="Home" />
+      {dummyData.map((item) => (
+        <PostStreamCard className="px-4 py-6 sm:px-0" data={item} />
+      ))}
+    </div>
+  );
 }
