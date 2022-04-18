@@ -54,5 +54,5 @@ const icons = {
 
 export default function Home() {
   const [allNews, setAllNews] = useState([]);
-  return <div>{dummyData.map((item) => NewsSection(item))}</div>;
+  return <div>{dummyData.map((item) => PostStreamCard(item))}</div>;
 }
