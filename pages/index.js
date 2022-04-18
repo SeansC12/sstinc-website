@@ -10,7 +10,7 @@ import {
   GoRepo,
 } from "react-icons/go";
 import PostStreamCard from "../components/post_stream_card";
-import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAe5UfatD1Z9jfpa7mnJV9mD-1l-j7RdE8",
@@ -74,9 +74,8 @@ export default function Home() {
   return (
     <div>
       {dummyData.map((item) => (
-        <PostStreamCard data={dummyData} />
+        <PostStreamCard data={item} />
       ))}
-
     </div>
   );
 }
