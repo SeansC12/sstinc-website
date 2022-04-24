@@ -1,6 +1,4 @@
-import {useEffect, useState} from "react";
-import PostStreamCard from "../components/PostStreamCard";
-import Header from "../components/header";
+import {useEffect} from "react";
 import {useRouter} from "next/router";
 
 export default function Home() {
