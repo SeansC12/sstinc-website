@@ -8,7 +8,7 @@ import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 const navigation = [
   {
     name: "Home",
-    href: "/",
+    href: "/Home",
     heading: "Home",
     current: false,
   },
