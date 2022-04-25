@@ -66,7 +66,7 @@ export default function Header({ tab, code }) {
                       </Link>
                     </div>
                     <div className="md:block flex justify-center">
-                      <div className="ml-10 flex flex-row space-x-4 w-screen">
+                      <div className="ml-10 flex flex-row space-x-4">
                         <div className="justify-self-center">
                           {navigation.map((item) => (
                             <a
