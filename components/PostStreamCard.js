@@ -8,7 +8,7 @@ export default function PostStreamCard({ data }) {
         {/* <data.icon></data.icon> */}
         <Image src={data.imageLink} width={200} height={150}></Image>
       </div>
-      <div class="pl-28 pt-2">
+      <div className="pl-28 pt-2">
         <div className="text-xl font-medium text-black break-words">
           {data.title}
         </div>
