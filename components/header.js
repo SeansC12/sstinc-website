@@ -8,14 +8,14 @@ import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 const navigation = [
   {
     name: "Home",
-    href: "/Home",
+    href: "/",
     heading: "Home",
     current: false,
   },
   {
-    name: "Gallery",
-    href: "/Gallery",
-    heading: "Gallery",
+    name: "Past Projects",
+    href: "/PastProjects",
+    heading: "Past Projects",
     current: false,
   },
   {
@@ -24,6 +24,13 @@ const navigation = [
     heading: "About Us",
     current: false,
   },
+  {
+    name: "Updates",
+    href: "/Updates",
+    heading: "Updates",
+    current: false,
+  },
+  
 ];
 
 let navigationObjectKey = 0;
