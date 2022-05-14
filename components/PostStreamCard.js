@@ -6,7 +6,7 @@ export default function PostStreamCard({ data }) {
     <div className="p-6 mb-7 max-w-7xl mx-auto bg-white rounded-xl shadow-none flex items-center hover:shadow-lg cursor-pointer">
       <div className="shrink-0">
         {/* <data.icon></data.icon> */}
-        <Image src={data.imageLink} width={200} height={150}></Image>
+        <Image src={data.image} width={200} height={150}/>
       </div>
       <div className="pl-28 pt-2">
         <div className="text-xl font-medium text-black break-words">
