@@ -26,7 +26,7 @@ function PastProjects() {
   const [selectedId, setSelectedId] = useState(null);
   return (
     <ParallaxProvider>
-      <Header tab="pastprojects" />
+      <Header tab="Past Projects" />
       <main>
         <ParallaxBanner
           layers={[{ image: randomImage, speed: -50 }]}
