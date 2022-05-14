@@ -39,11 +39,6 @@ const dummyData = [
 export default function Home() {
   const [allNews, setAllNews] = useState([]);
   return (
-    <div>
-      <Header tab="Home" />
-      {dummyData.map((item) => (
-        <PostStreamCard className="px-4 py-6 sm:px-0" data={item} />
-      ))}
-    </div>
+      <></>
   );
 }
