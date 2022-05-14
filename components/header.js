@@ -13,9 +13,9 @@ const navigation = [
     current: false,
   },
   {
-    name: "Gallery",
-    href: "/Gallery",
-    heading: "Gallery",
+    name: "Past Projects",
+    href: "/PastProjects",
+    heading: "Past Projects",
     current: false,
   },
   {
@@ -24,6 +24,7 @@ const navigation = [
     heading: "About Us",
     current: false,
   },
+  
 ];
 
 let navigationObjectKey = 0;
@@ -59,7 +60,7 @@ export default function Header({ tab, code }) {
                     <div className="flex-shrink-0">
                       <Link href="/" className="cursor-pointer">
                         <Image
-                          src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no?"
+                          src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no?authuser=0"
                           width={52}
                           height={52}
                         />
@@ -74,9 +75,9 @@ export default function Header({ tab, code }) {
                               href={item.href}
                               className={classNames(
                                 item.current
-                                  ? "bg-gray-900 text-white"
-                                  : "text-black hover:bg-gray-700 hover:text-white",
-                                "px-3 py-2 rounded-md text-sm font-medium"
+                                  ? "bg-gray-900 ml-5 text-white"
+                                  : "text-black hover:bg-gray-700 hover:text-white ml-5",
+                                "px-3 py-2 rounded-md text-sm font-medium ml-5"
                               )}
                               aria-current={item.current ? "page" : undefined}
                             >
@@ -130,6 +131,11 @@ export default function Header({ tab, code }) {
         <header className="bg-white shadow">
           <div className="border-b"></div>
         </header>
+        <main>
+          {/* <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <div className="px-4 py-6 sm:px-0"></div>
+          </div> */}
+        </main>
       </div>
     </>
   );
