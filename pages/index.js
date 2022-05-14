@@ -1,14 +1,5 @@
 import { useState } from "react";
-import {
-  GoProject,
-  GoPulse,
-  GoPin,
-  GoPlay,
-  GoRepoClone,
-  GoRepo,
-} from "react-icons/go";
 import PostStreamCard from "../components/PostStreamCard";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Header from "../components/header";
 
 const dummyData = [
@@ -44,14 +35,6 @@ const dummyData = [
   },
 ];
 
-const icons = {
-  GoProject: GoProject,
-  GoPulse: GoPulse,
-  GoPin: GoPin,
-  GoPlay: GoPlay,
-  GoRepoClone: GoRepoClone,
-  GoRepo: GoRepo,
-};
 
 export default function Home() {
   const [allNews, setAllNews] = useState([]);
