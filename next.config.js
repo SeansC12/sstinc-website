@@ -9,6 +9,7 @@ const nextConfig = {
       "images.unsplash.com",
       "thumbs.dreamstime.com",
       "lh3.googleusercontent.com",
+      "picsum.photos",
     ],
   },
 };
