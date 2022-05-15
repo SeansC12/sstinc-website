@@ -3,16 +3,24 @@ import Image from "next/image";
 
 export default function PostStreamCard({ data }) {
   return (
-    <div className="p-6 mb-7 max-w-7xl mx-auto bg-white rounded-xl shadow-none flex items-center hover:shadow-lg cursor-pointer">
-      <div className="shrink-0">
-        {/* <data.icon></data.icon> */}
-        <Image src={data.image} width={200} height={150}/>
-      </div>
-      <div className="pl-28 pt-2">
-        <div className="text-xl font-medium text-black break-words">
-          {data.title}
+    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md sm:shadow-none sm:hover:shadow-md overflow-hidden sm:max-w-7xl mt-14 cursor-pointer">
+      <div className="sm:flex">
+        <div className=""></div>
+        <div class="shrink-0">
+          <img
+            className="h-48 w-full object-cover sm:h-full sm:w-48"
+            src={data.image}
+            width={200}
+            height={150}
+            alt="Never gonna give you up"
+          ></img>
         </div>
-        <p className="text-slate-500">{data.desription}</p>
+        <div className="flex flex-col items-center pt-10 pb-10 sm:justify-center sm:items-start sm:p-8">
+          <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+            {data.title}
+          </div>
+          <p className="mt-2 text-slate-500">{data.description}</p>
+        </div>
       </div>
     </div>
   );

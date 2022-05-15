@@ -30,7 +30,6 @@ const navigation = [
     heading: "Updates",
     current: false,
   },
-  
 ];
 
 let navigationObjectKey = 0;
@@ -60,7 +59,7 @@ export default function Header({ tab, code }) {
         <Disclosure as="nav" className="bg-white">
           {({ open }) => (
             <>
-              <div className="max-w-7xl mx-auto px-4 ml-24">
+              <div className="max-w-7xl mx-auto px-4 ml-24 md:justify-start md:space-x-10 ">
                 <div className="flex items-center justify-between h-16">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
@@ -72,7 +71,7 @@ export default function Header({ tab, code }) {
                         />
                       </Link>
                     </div>
-                    <div className="md:block flex justify-center">
+                    <div className=" hidden sm:visible md:block sm:flex sm:justify-center">
                       <div className="ml-10 flex flex-row space-x-4">
                         <div className="justify-self-center">
                           {navigation.map((item) => (
@@ -94,7 +93,7 @@ export default function Header({ tab, code }) {
                       </div>
                     </div>
                   </div>
-                  <div className="-mr-2 flex md:hidden">
+                  <div className="-mr-2 flex sm:hidden">
                     {/* Mobile menu button */}
                     <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open main menu</span>
@@ -137,11 +136,6 @@ export default function Header({ tab, code }) {
         <header className="bg-white shadow">
           <div className="border-b"></div>
         </header>
-        <main>
-          {/* <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            <div className="px-4 py-6 sm:px-0"></div>
-          </div> */}
-        </main>
       </div>
     </>
   );
