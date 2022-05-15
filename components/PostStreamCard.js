@@ -5,7 +5,6 @@ export default function PostStreamCard({ data }) {
   return (
     <div className="max-w-md mx-auto bg-white rounded-xl shadow-md sm:shadow-none sm:hover:shadow-md overflow-hidden sm:max-w-7xl mt-14 cursor-pointer">
       <div className="sm:flex">
-        <div className=""></div>
         <div class="shrink-0">
           <img
             className="h-48 w-full object-cover sm:h-full sm:w-48"
