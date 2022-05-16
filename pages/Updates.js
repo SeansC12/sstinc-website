@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PostStreamCard from "../components/PostStreamCard";
-import Header from "../components/header";
+import Header from "../components/Header";
 
 const dummyData = [
   {
@@ -42,7 +42,11 @@ export default function Home() {
     <div>
       <Header tab="Updates" />
       {dummyData.map((item) => (
-        <PostStreamCard className="px-4 py-6 sm:px-0" data={item} />
+        <PostStreamCard
+          key={dummyData.indexOf(item)}
+          className="px-4 py-6 sm:px-0"
+          data={item}
+        />
       ))}
     </div>
   );
