@@ -46,7 +46,7 @@ function PastProjects() {
           </div>
           
         </div> */}
-        <div className="w-screen">{projects.map((e) => Project(e))}</div>
+        <div className="w-screen">{projects.map((e) => <Project info={e}/>)}</div>
       </main>
     </ParallaxProvider>
   );

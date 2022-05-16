@@ -25,7 +25,7 @@ function Home() {
               </p>
               <div className="flex justify-center w-screen">
                 <button className=" h-10 bg-blue-500 opacity-100 rounded-full px-3 mt-5">
-                  <a href="https://youtube.com">Apply now</a>
+                  <a href="https://forms.gle/ghnwWXnfrS1pXpUe7">Apply now</a>
                 </button>
               </div>
             </div>
