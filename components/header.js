@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
@@ -44,7 +43,7 @@ function resetNavigation() {
   }
 }
 
-export default function Header({ tab, code }) {
+export default function Header({ tab }) {
   resetNavigation();
   for (const key in navigation) {
     if (navigation[key].name === tab) {
@@ -64,11 +63,13 @@ export default function Header({ tab, code }) {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <Link href="/" className="cursor-pointer">
-                        <Image
-                          src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no?authuser=0"
-                          width={52}
-                          height={52}
-                        />
+                        <div>
+                          <Image
+                            src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no?authuser=0"
+                            width={52}
+                            height={52}
+                          />
+                        </div>
                       </Link>
                     </div>
                     <div className=" hidden sm:visible md:block sm:flex sm:justify-center">

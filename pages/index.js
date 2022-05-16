@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/header";
+import Header from "../components/Header";
 import "../public/homeTopImg.jpeg";
 import "../public/homeBottomImg.jpeg";
 import "../public/im1.png";
@@ -8,7 +8,7 @@ import "../public/projectSFIMg.jpeg";
 function Home() {
   return (
     <div>
-        <Header tab="Home" />
+      <Header tab="Home" />
       <div>
         <div>
           <img
