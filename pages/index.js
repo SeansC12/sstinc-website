@@ -47,7 +47,7 @@ export default function Home() {
               <a href="/PastProjects">Go</a>
             </button>
           </div>
-          <div className="mx-9">
+          <div className="mx-12">
             <img className="rounded-3xl" src="homeBottomImg.jpeg"></img>
           </div>
         </div>
