@@ -14,7 +14,7 @@ export default function Project({ project }) {
     //     <p className="text-black text-xl">{project.subtitle}</p>
     //   </div>
     // </div>
-    <div className="w-screen h-screen mt-5">
+    <div className=" h-screen mt-5">
       <img
         className="h-screen object-cover w-screen opacity-30 absolute z-0"
         src={project.image}

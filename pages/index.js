@@ -13,18 +13,18 @@ export default function Home() {
       <div>
         <div>
           <img
-            className="h-screen object-cover opacity-30 absolute z-0 w-screen"
+            className="h-screen object-cover opacity-30 absolute  w-screen"
             src="projectSFIMg.jpeg"
           ></img>
-          <div className="h-screen flex items-center justify-center relative z-20">
+          <div className="h-screen flex items-center justify-center relative">
             <div>
-              <p className="text-xl md:text-3xl text-center w-screen my-2">
+              <p className="text-xl md:text-3xl text-center my-2">
                 Passionate about technology?
               </p>
-              <p className="text-m md:text-2xl text-center w-screen">
+              <p className="text-m md:text-2xl text-center">
                 Join SST Inc today!
               </p>
-              <div className="flex justify-center w-screen">
+              <div className="flex justify-center">
                 <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-5">
                   <a href="https://forms.gle/ghnwWXnfrS1pXpUe7" target={"_blank"}>Apply now</a>
                 </button>
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-screen h-5 bg-white"></div>
+        {/* <div className="w-screen h-5 bg-white"></div> */}
 
         <div className="items-center md:grid md:grid-cols-2 m-5">
           <div className="justify-center text-center mr-5">
@@ -52,7 +52,7 @@ export default function Home() {
             </button>
           </div>
           <div className="my-5">
-            <img className="rounded-3xl -mt-5" src="homeBottomImg.jpeg"></img>
+            <img className="rounded-3xl" src="homeBottomImg.jpeg"></img>
           </div>
         </div>
 

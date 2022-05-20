@@ -24,7 +24,6 @@ const projects = [
 ];
 
 function PastProjects() {
-  const [selectedId, setSelectedId] = useState(null); // TODO: HARISH PLEASE TRY TO REMOVE THIS
   return (
     <ParallaxProvider>
       <Header tab="Past Projects" />
@@ -49,7 +48,7 @@ function PastProjects() {
           </div>
           
         </div> */}
-        <div className="w-screen">
+        <div>
           {projects.map((e) => (
             <Project key={projects.indexOf(e)} project={e} />
           ))}
