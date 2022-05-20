@@ -4,6 +4,7 @@ import "../public/homeTopImg.jpeg";
 import "../public/homeBottomImg.jpeg";
 import "../public/im1.png";
 import "../public/projectSFIMg.jpeg";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,8 +25,11 @@ export default function Home() {
                 Join SST Inc today!
               </p>
               <div className="flex justify-center w-screen">
-                <button className=" h-10 bg-blue-500 opacity-100 rounded-full px-3 mt-5">
-                  <a href="https://forms.gle/ghnwWXnfrS1pXpUe7">Apply now</a>
+                <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-5">
+                  <a href="https://forms.gle/ghnwWXnfrS1pXpUe7" target={"_blank"}>Apply now</a>
+                </button>
+                <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-5 ml-5">
+                  <Link href="/AboutUs">Contact Us</Link>
                 </button>
               </div>
             </div>
@@ -44,7 +48,7 @@ export default function Home() {
               improve their lives blhahahah
             </p>
             <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-3 mb-6">
-              <a href="/PastProjects">Go</a>
+              <Link href="/PastProjects">Go</Link>
             </button>
           </div>
           <div className="my-5">
