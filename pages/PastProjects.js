@@ -33,21 +33,11 @@ function PastProjects() {
           className="h-screen"
         >
           <div className="absolute inset-0 flex items-center">
-            <h1 className="text-6xl w-screen text-center text-white font-thin md:text-8xl">
+            <h1 className="text-6xl w-screen text-center text-black font-extralight md:text-8xl">
               Our projects
             </h1>
           </div>
         </ParallaxBanner>
-        {/* <div className="h-screen items-center flex">
-          <div
-            className={
-              "w-screen justify-center items-center grid xl:grid-cols-2"
-            }
-          >
-            {projects.map((e) => Project(e))}
-          </div>
-          
-        </div> */}
         <div>
           {projects.map((e) => (
             <Project key={projects.indexOf(e)} project={e} />
