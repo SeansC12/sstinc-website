@@ -24,11 +24,11 @@ export default function Home() {
               <p className="text-m md:text-2xl text-center">
                 Join SST Inc today!
               </p>
-              <div className="flex justify-center">
-                <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-5">
+              <div className="flex justify-center mt-3">
+                <button className="h-10 bg-blue-600 text-white opacity-100 rounded-full px-5 my-6 mx-3">
                   <a href="https://forms.gle/ghnwWXnfrS1pXpUe7" target={"_blank"}>Apply now</a>
                 </button>
-                <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-5 ml-5">
+                <button className="h-10 bg-blue-600 text-white opacity-100 rounded-full px-5 my-6 mx-3">
                   <Link href="/AboutUs">Contact Us</Link>
                 </button>
               </div>
@@ -41,18 +41,17 @@ export default function Home() {
         <div className="items-center md:grid md:grid-cols-2 m-5">
           <div className="justify-center text-center mr-5">
             <p className="text-xl md:text-3xl">
-              See what we've done in the past
+              Want to know more about us?
             </p>
             <p className="text-m">
-              At Inc, we thrive to help the community by making apps which
-              improve their lives blhahahah
+              Check out some of our past accomplishments
             </p>
-            <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-3 mb-6">
-              <Link href="/PastProjects">Go</Link>
+            <button className="h-10 bg-blue-500 text-white opacity-100 rounded-full px-5 mt-5 mb-6">
+              <Link href="/PastProjects">Check it out</Link>
             </button>
           </div>
-          <div className="my-5">
-            <img className="rounded-3xl" src="homeBottomImg.jpeg"></img>
+          <div className="lg:my-16 mx-5">
+            <img className="rounded-3xl" src="homeBottomImg.jpeg" />
           </div>
         </div>
 
