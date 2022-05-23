@@ -44,7 +44,7 @@ export default function Home() {
       {dummyData.map((item) => (
         <PostStreamCard
           key={dummyData.indexOf(item)}
-          className="px-4 py-6 sm:px-0"
+          className="px-4 py-6 justify-center lg:px-0"
           data={item}
         />
       ))}
