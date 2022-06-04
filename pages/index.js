@@ -18,10 +18,10 @@ export default function Home() {
           ></img>
           <div className="h-screen flex items-center justify-center relative">
             <div>
-              <p className="text-xl md:text-3xl text-center my-2">
+              <p className="text-xl sm:text-3xl text-center my-2">
                 Passionate about technology?
               </p>
-              <p className="text-m md:text-2xl text-center">
+              <p className="text-m sm:text-2xl text-center">
                 Join SST Inc today!
               </p>
               <div className="flex justify-center mt-3">

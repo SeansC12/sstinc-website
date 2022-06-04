@@ -36,18 +36,16 @@ const dummyData = [
 ];
 
 export default function Home() {
-  const [allNews, setAllNews] = useState([]);
+  // const [allNews, setAllNews] = useState([]);
 
   return (
-    <div>
+    <div className="">
       <Header tab="Updates" />
-      {dummyData.map((item) => (
-        <PostStreamCard
-          key={dummyData.indexOf(item)}
-          className="px-4 py-6 justify-center lg:px-0"
-          data={item}
-        />
-      ))}
+      <div className=" grid grid-cols-1 place-items-center">
+        {dummyData.map((item) => (
+          <PostStreamCard key={dummyData.indexOf(item)} data={item} />
+        ))}
+      </div>
     </div>
   );
 }
