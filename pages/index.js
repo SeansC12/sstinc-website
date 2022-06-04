@@ -13,22 +13,22 @@ export default function Home() {
       <div>
         <div>
           <img
-            className="h-screen object-cover opacity-30 absolute z-0 w-screen"
+            className="h-screen object-cover opacity-30 absolute  w-screen"
             src="projectSFIMg.jpeg"
           ></img>
-          <div className="h-screen flex items-center justify-center relative z-20">
-            <div>
-              <p className="text-xl md:text-3xl text-center w-screen my-2">
+          <div className="h-screen flex items-center justify-center relative">
+            <div className="m-5">
+              <p className="text-3xl text-center my-2">
                 Passionate about technology?
               </p>
-              <p className="text-m md:text-2xl text-center w-screen">
+              <p className="text-2xl text-center">
                 Join SST Inc today!
               </p>
-              <div className="flex justify-center w-screen">
-                <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-5">
+              <div className="flex justify-center mt-3">
+                <button className="h-10 bg-blue-600 text-white opacity-100 rounded-full px-5 my-6 mx-3">
                   <a href="https://forms.gle/ghnwWXnfrS1pXpUe7" target={"_blank"}>Apply now</a>
                 </button>
-                <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-5 ml-5">
+                <button className="h-10 bg-blue-600 text-white opacity-100 rounded-full px-5 my-6 mx-3">
                   <Link href="/AboutUs">Contact Us</Link>
                 </button>
               </div>
@@ -36,25 +36,27 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-screen h-5 bg-white"></div>
 
-        <div className="items-center md:grid md:grid-cols-2 m-5">
+        <div className="items-center md:grid md:grid-cols-2 p-5 bg-slate-300">
           <div className="justify-center text-center mr-5">
             <p className="text-xl md:text-3xl">
-              See what we've done in the past
+              Want to know more about us?
             </p>
             <p className="text-m">
-              At Inc, we thrive to help the community by making apps which
-              improve their lives blhahahah
+              Check out some of our past projects
             </p>
-            <button className="h-10 bg-blue-500 opacity-100 rounded-full px-5 mt-3 mb-6">
-              <Link href="/PastProjects">Go</Link>
+            <button className="h-10 bg-blue-600 text-white opacity-100 rounded-full px-5 mt-5 mb-6">
+              <Link href="/PastProjects">Check it out</Link>
             </button>
           </div>
-          <div className="my-5">
-            <img className="rounded-3xl -mt-5" src="homeBottomImg.jpeg"></img>
+          <div className="my-3 lg:my-12 mx-5">
+            <img className="rounded-3xl" src="homeBottomImg.jpeg" />
           </div>
         </div>
+
+
+        <div className="w-screen h-[3/4]"></div>
+
 
         {/* <div>
           <img
