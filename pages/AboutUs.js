@@ -204,9 +204,6 @@ export default function AboutUs() {
           {indivTeamElement.slice(12, 17).map((personElement, key) => {
             return <div key={key}>{personElement}</div>;
           })}
-          {/* {[0, 1, 2, 3].map((t) => {
-            return <Person personInfo={teacher[t]} key={t} />;
-          })} */}
         </div>
       </div>
     </div>
