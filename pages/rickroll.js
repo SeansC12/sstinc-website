@@ -11,7 +11,6 @@ export default function RickRoll() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      ur epic if you legit find on your own
     </div>
   );
 }
