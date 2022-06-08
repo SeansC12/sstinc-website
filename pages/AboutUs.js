@@ -4,26 +4,99 @@ import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import getWindowDimensions from "../hooks/getWindowDimensions";
 import Image from "next/image";
 
-const people = [
-  { image: "https://picsum.photos/150", name: "Test1" },
-  { image: "https://picsum.photos/150", name: "Test2" },
-  { image: "https://picsum.photos/150", name: "Test3" },
-  { image: "https://picsum.photos/150", name: "Test4" },
-  { image: "https://picsum.photos/150", name: "Test5" },
-  { image: "https://picsum.photos/150", name: "Test6" },
-  { image: "https://picsum.photos/150", name: "Test7" },
-  { image: "https://picsum.photos/150", name: "Test8" },
-  { image: "https://picsum.photos/150", name: "Test9" },
-  { image: "https://picsum.photos/150", name: "Test10" },
-  { image: "https://picsum.photos/150", name: "Test11" },
-  { image: "https://picsum.photos/150", name: "Test12" },
-];
-const teacher = [
-  { image: "https://picsum.photos/150", name: "Teacher1" },
-  { image: "https://picsum.photos/150", name: "Teacher2" },
-  { image: "https://picsum.photos/150", name: "Teacher3" },
-  { image: "https://picsum.photos/150", name: "Teacher4" },
-];
+const DreamTeam = {
+  EXCO: {
+    XuanHan: {
+      name: "Tan Xuan Han",
+      position: "President",
+      imageURL: "",
+    },
+    Asher: {
+      name: "Asher",
+      position: "Vice-President",
+      imageURL: "",
+    },
+    Kai: {
+      name: "Tay Kai Quan",
+      position: "iOS CTO",
+      imageURL: "",
+    },
+    Luke: {
+      name: "Luke Yeo",
+      position: "iOS ACTO",
+      imageURL: "",
+    },
+    Lohith: {
+      name: "Lohith",
+      position: "iOS Task Force",
+      imageURL: "",
+    },
+    EnJie: {
+      name: "Tham En Jie",
+      position: "iOS Task Force",
+      imageURL: "",
+    },
+    Harish: {
+      name: "Harish",
+      position: "React CTO",
+      imageURL: "",
+    },
+    Sean: {
+      name: "Sean Ulric Chua",
+      position: "React ACTO",
+      imageURL: "",
+    },
+    Sairam: {
+      name: "Sairam Suresh",
+      position: "React Task Force",
+      imageURL: "",
+    },
+    Aathithya: {
+      name: "Aathithya Jegathaseen",
+      position: "CMO",
+      imageURL: "",
+    },
+    Ayaan: {
+      name: "Ayaan Jain",
+      position: "CAO",
+      imageURL: "",
+    },
+    Daksh: {
+      name: "Daksh Thapar",
+      position: "ACAO",
+      imageURL: "",
+    },
+  },
+  BOD: {
+    LordYeo: {
+      name: "Aurelius Yeo",
+      position: "Board of Director",
+      imageURL: "",
+    },
+    MsTang: {
+      name: "Jovita Tang",
+      position: "Board of Director",
+      imageURL: "",
+    },
+    Chuaism: {
+      name: "Jonathan Chua",
+      position: "Board of Director",
+      imageURL: "",
+    },
+    Roger: {
+      name: "Roger Yeo",
+      position: "Board of Director",
+      imageURL: "",
+    },
+  },
+};
+
+const indivTeamElement = [];
+for (const division in DreamTeam) {
+  for (const member in DreamTeam[division]) {
+    indivTeamElement.push(<Person personInfo={DreamTeam[division][member]} />);
+  }
+}
 
 export default function AboutUs() {
   const image2 = `https://picsum.photos/2000/2000`;
@@ -107,18 +180,18 @@ export default function AboutUs() {
           2022/23 Executive Committee
         </h1>
         <div className="grid xl:grid-cols-5 w-fit">
-          {[0, 1, 2, 3, 4].map((i) => {
-            return <Person info={people[i]} />;
+          {indivTeamElement.slice(0, 5).map((personElement, key) => {
+            return <div key={key}>{personElement}</div>;
           })}
         </div>
         <div className="grid xl:grid-cols-4 w-fit">
-          {[5, 6, 7, 8].map((i) => {
-            return <Person info={people[i]} />;
+          {indivTeamElement.slice(5, 9).map((personElement, key) => {
+            return <div key={key}>{personElement}</div>;
           })}
         </div>
         <div className="grid xl:grid-cols-3 w-fit">
-          {[9, 10, 11].map((i) => {
-            return <Person info={people[i]} />;
+          {indivTeamElement.slice(9, 12).map((personElement, key) => {
+            return <div key={key}>{personElement}</div>;
           })}
         </div>
 
@@ -127,24 +200,31 @@ export default function AboutUs() {
           Board of Directors
         </h1>
         <div className="grid xl:grid-cols-4 m-10">
-          {[0, 1, 2, 3].map((t) => {
-            return <Person info={teacher[t]} />;
+          {indivTeamElement.slice(12, 17).map((personElement, key) => {
+            return <div key={key}>{personElement}</div>;
           })}
+          {/* {[0, 1, 2, 3].map((t) => {
+            return <Person personInfo={teacher[t]} key={t} />;
+          })} */}
         </div>
       </div>
     </div>
   );
 }
 
-function Person(info) {
-  let person = info.info;
+function Person({ personInfo }) {
   return (
-    <div className="m-auto mt-10 mx-10">
+    <div className="flex justify-center flex-col m-auto mt-10 mx-10 w-[158px] h-[222px]">
       <img
         className="drop-shadow-md rounded-full border-orange-400 border-4"
-        src={person.image}
+        src={"https://picsum.photos/150"}
       ></img>
-      <p className="mt-5">{person.name}</p>
+      <div className="text-center">
+        <h1 className="mt-3 font-medium text-lg">
+          <strong>{personInfo.name}</strong>
+        </h1>
+        <h2 className="font-normal text-base">{personInfo.position}</h2>
+      </div>
     </div>
   );
 }
