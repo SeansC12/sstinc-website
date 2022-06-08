@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import getWindowDimensions from "../hooks/getWindowDimensions";
 import Person from "../components/Person";
+import Image from 'next/image'
 
 const DreamTeam = {
   EXCO: {
