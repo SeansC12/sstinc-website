@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Header from "../components/Header";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import getWindowDimensions from "../hooks/getWindowDimensions";
+import Person from "../components/Person";
 import Image from "next/image";
 
 const DreamTeam = {
@@ -52,7 +53,7 @@ const DreamTeam = {
       imageURL: "",
     },
     Aathithya: {
-      name: "Aathithya Jegathaseen",
+      name: "Aathithya",
       position: "CMO",
       imageURL: "",
     },
@@ -207,23 +208,6 @@ export default function AboutUs() {
             return <Person personInfo={teacher[t]} key={t} />;
           })} */}
         </div>
-      </div>
-    </div>
-  );
-}
-
-function Person({ personInfo }) {
-  return (
-    <div className="flex justify-center flex-col m-auto mt-10 mx-10 w-[158px] h-[222px]">
-      <img
-        className="drop-shadow-md rounded-full border-orange-400 border-4"
-        src={"https://picsum.photos/150"}
-      ></img>
-      <div className="text-center">
-        <h1 className="mt-3 font-medium text-lg">
-          <strong>{personInfo.name}</strong>
-        </h1>
-        <h2 className="font-normal text-base">{personInfo.position}</h2>
       </div>
     </div>
   );
