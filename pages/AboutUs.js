@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import getWindowDimensions from "../hooks/getWindowDimensions";
 import Person from "../components/Person";
-import Image from "next/image";
 
 const DreamTeam = {
   EXCO: {
@@ -53,7 +52,7 @@ const DreamTeam = {
       imageURL: "",
     },
     Aathithya: {
-      name: "Aathithya",
+      name: "Aathithya Jagatheesan",
       position: "CMO",
       imageURL: "",
     },
@@ -168,17 +167,17 @@ export default function AboutUs() {
         <h1 className="text-5xl py-8 mt-16 font-mono font-semibold">
           2022/23 Executive Committee
         </h1>
-        <div className="grid xl:grid-cols-5 w-fit">
+        <div className="grid lg:grid-cols-5 w-fit">
           {indivTeamElement.slice(0, 5).map((personElement, key) => {
             return <div key={key}>{personElement}</div>;
           })}
         </div>
-        <div className="grid xl:grid-cols-4 w-fit">
+        <div className="grid lg:grid-cols-4 w-fit">
           {indivTeamElement.slice(5, 9).map((personElement, key) => {
             return <div key={key}>{personElement}</div>;
           })}
         </div>
-        <div className="grid xl:grid-cols-3 w-fit">
+        <div className="grid lg:grid-cols-3 w-fit">
           {indivTeamElement.slice(9, 12).map((personElement, key) => {
             return <div key={key}>{personElement}</div>;
           })}
@@ -188,7 +187,7 @@ export default function AboutUs() {
         <h1 className="text-5xl mt-24 mb-5 font-mono font-semibold">
           Board of Directors
         </h1>
-        <div className="grid xl:grid-cols-4 m-10">
+        <div className="grid lg:grid-cols-4 m-10">
           {indivTeamElement.slice(12, 17).map((personElement, key) => {
             return <div key={key}>{personElement}</div>;
           })}

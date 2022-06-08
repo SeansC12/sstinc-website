@@ -45,8 +45,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="items-center md:grid md:grid-cols-2 p-5 bg-slate-300">
-          <div className="justify-center text-center mr-5 mt-5">
+        <div className="items-center md:grid md:grid-cols-2 p-5  bg-gradient-to-tr from-red-500 to-fuchsia-500">
+          <div className="justify-center text-center mr-5 mt-5 text-white">
             <p className="text-xl md:text-3xl">Want to know more about us?</p>
             <p className="text-m">Check out some of our past projects</p>
 
