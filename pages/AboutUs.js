@@ -172,11 +172,6 @@ export default function AboutUs() {
               <li>SST Inc. is the best!</li>
             </ul>
           </div>
-          <img
-            className="w-48"
-            src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
-          ></img>
-          <div className="text-2xl lg:text-3xl m-10">SST Inc. is the best!</div>
         </div>
       </div>
 
@@ -200,7 +195,7 @@ export default function AboutUs() {
           })}
         </div>
 
-        <div className="w-[70vw] h-[1px] bg-slate-400 mt-10" />
+        <div className="w-[70vw] h-[1px] bg-slate-400 mt-24" />
         <h1 className="text-5xl mt-24 mb-5 font-mono font-semibold">
           Board of Directors
         </h1>
