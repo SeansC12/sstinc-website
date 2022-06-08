@@ -257,10 +257,9 @@ export default function AboutUs() {
                 required
               />
               <textarea
-                type="pa"
                 className="rounded-2xl px-3 py-2 h-28 w-full"
-                name="Description"
-                placeholder="Description"
+                name="Message"
+                placeholder="Message"
                 required
               />
 
