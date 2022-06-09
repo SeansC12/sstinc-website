@@ -5,6 +5,9 @@ import "../public/homeBottomImg.jpeg";
 import "../public/im1.png";
 import "../public/projectSFIMg.jpeg";
 import Link from "next/link";
+import '../public/androidLogo.svg'
+import '../public/reactLogo.svg'
+import '../public/swiftLogo.png'
 
 export default function Home() {
   return (
@@ -61,7 +64,26 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-screen h-[3/4]"></div>
+        <div className="h-[3/4]">
+          <div className="text-center">
+            <p className="font-mono">What we offer</p>
+          </div>
+          <div className="grid md:grid-cols-3 text-center">
+            <div>
+              <p>android</p>
+              <img className="w-full lg:p-24" src='androidLogo.svg'></img>
+              <p>Use Android Studio to build powerful native apps for Android, the most widely used OS for phones</p>
+            </div>
+            <div>
+              <p>reactjs</p>
+              <img className="w-full lg:p-24" src='reactLogo.svg'></img>
+            </div>
+            <div>
+              <p>swift</p>
+              <img className="w-full lg:p-24" src='swiftLogo.png'></img>
+            </div>
+          </div>
+        </div>
 
         {/* <div>
           <img
