@@ -13,7 +13,7 @@ export default function Home() {
       <div>
         <div>
           <img
-            className="h-screen object-cover opacity-30 w-screen absolute"
+            className="h-screen object-cover opacity-40 w-screen absolute"
             src="projectSFIMg.jpeg"
           ></img>
           <div className="h-screen flex items-center justify-center relative">
