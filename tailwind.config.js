@@ -5,6 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        courier_prime: "Courier Prime",
+        source_code_pro: "Source Code Pro",
+        roboto: "Roboto",
+      },
     },
   },
   plugins: [],
