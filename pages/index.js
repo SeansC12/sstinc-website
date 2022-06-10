@@ -45,13 +45,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="items-center md:grid md:grid-cols-2 p-5  bg-gradient-to-tr from-red-500 to-fuchsia-500">
+        <div className="items-center md:grid md:grid-cols-2 p-5  bg-gradient-to-tr from-cyan-500 to-yellow-400">
           <div className="justify-center text-center mr-5 mt-5 text-white">
             <p className="text-xl md:text-3xl">Want to know more about us?</p>
             <p className="text-m">Check out some of our past projects</p>
 
             <Link href="/PastProjects">
-              <button className="h-10 bg-blue-600 text-white opacity-100 rounded-full px-5 my-6 mx-3 hover:cursor-pointer hover:drop-shadow-2xl">
+              <button className="h-10 bg-gradient-to-r from-red-500 to-fuchsia-500 text-white opacity-100 rounded-full px-5 my-6 mx-3 hover:cursor-pointer hover:drop-shadow-2xl">
                 Check it out
               </button>
             </Link>

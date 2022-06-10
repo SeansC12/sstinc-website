@@ -4,6 +4,7 @@ import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import getWindowDimensions from "../hooks/getWindowDimensions";
 import Image from "next/image";
 import Person from "../components/Person";
+import Image from 'next/image'
 
 const DreamTeam = {
   EXCO: {
@@ -257,10 +258,9 @@ export default function AboutUs() {
                 required
               />
               <textarea
-                type="pa"
                 className="rounded-2xl px-3 py-2 h-28 w-full"
-                name="Description"
-                placeholder="Description"
+                name="Message"
+                placeholder="Message"
                 required
               />
 
