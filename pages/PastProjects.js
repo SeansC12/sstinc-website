@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "../components/Header";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
-import { useState } from "react";
 import Project from "../components/Project";
 
-const randomImage = "https://picsum.photos/2000";
+const randomImage = "https://picsum.photos/2000"
 
 const projects = [
   {
