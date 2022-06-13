@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PostStreamCard from "../components/PostStreamCard";
 import Header from "../components/Header";
+import Footer from '../components/Footer'
 
 const dummyData = [
   {
@@ -48,6 +49,7 @@ export default function Home() {
           data={item}
         />
       ))}
+      <Footer />
     </div>
   );
 }
