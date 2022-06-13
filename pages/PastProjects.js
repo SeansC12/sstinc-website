@@ -38,7 +38,7 @@ function PastProjects() {
       originX: 0,
       transition: {
         type: "tween",
-        duration: 0.6,
+        duration: 0.4,
       },
     },
     visible: {
@@ -46,7 +46,7 @@ function PastProjects() {
       originX: 0,
       transition: {
         type: "tween",
-        duration: 0.6,
+        duration: 0.4,
       },
     },
   };
