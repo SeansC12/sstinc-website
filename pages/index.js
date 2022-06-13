@@ -8,6 +8,7 @@ import Link from "next/link";
 import '../public/androidLogo.svg'
 import '../public/reactLogo.svg'
 import '../public/swiftLogo.png'
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -106,6 +107,7 @@ export default function Home() {
             </div>
           </div>
         </div> */}
+        <Footer/>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import Project from "../components/Project";
+import Footer from "../components/Footer";
 
 const randomImage = "https://picsum.photos/2000"
 
@@ -53,6 +54,7 @@ function PastProjects() {
           ))}
         </div>
       </main>
+      <Footer />
     </ParallaxProvider>
   );
 }
