@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PostStreamCard from "../components/PostStreamCard";
 import Header from "../components/Header";
-import Footer from '../components/Footer'
+import Footer from "../components/Footer";
 
 const dummyData = [
   {
@@ -42,13 +42,17 @@ export default function Home() {
   return (
     <div>
       <Header tab="Updates" />
-      {dummyData.map((item) => (
-        <PostStreamCard
-          key={dummyData.indexOf(item)}
-          className="px-4 py-6 sm:px-0"
-          data={item}
-        />
-      ))}
+      <div className="">
+        <div className="">
+          {dummyData.map((item) => (
+            <PostStreamCard
+              key={dummyData.indexOf(item)}
+              className="px-4 py-6 sm:px-0"
+              data={item}
+            />
+          ))}
+        </div>
+      </div>
       <Footer />
     </div>
   );
