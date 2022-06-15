@@ -5,7 +5,7 @@ import "../public/homeBottomImg.jpeg";
 import "../public/im1.png";
 import "../public/projectSFIMg.jpeg";
 import Link from "next/link";
-import "../public/androidLogo.svg";
+import "../public/androidLogo.png";
 import "../public/reactLogo.svg";
 import "../public/swiftLogo.png";
 import Footer from "../components/Footer";
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 text-center">
             <div>
               <p>android</p>
-              <img className="w-full lg:p-24" src="androidLogo.svg"></img>
+              <img className="w-full lg:p-24" src="androidLogo.png"></img>
               <p>
                 Use Android Studio to build powerful native apps for Android,
                 the most widely used OS for phones
