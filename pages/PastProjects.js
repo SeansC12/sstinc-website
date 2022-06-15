@@ -157,15 +157,37 @@ function PastProjects() {
 
       <div className="aspect-[1440/260] bg-[url('../svg/layered-waves-4.svg')]" />
 
-      <h1 ref={iosRef} className="text-center text-4xl h-[100vh]">
-        iOS App Development
-      </h1>
-      <h1 ref={androidRef} className="text-center text-4xl h-[100vh]">
-        Android App Development
-      </h1>
-      <h1 ref={reactRef} className="text-center text-4xl h-[100vh]">
-        React JS
-      </h1>
+      <div>
+        <h1 ref={iosRef} className="mt-11 mb-10 lg:mt-0 text-center text-4xl">
+          iOS App Development
+        </h1>
+        <div className="flex justify-around items-center">
+          <Project />
+          <Project />
+        </div>
+      </div>
+
+      <div>
+        <h1
+          ref={androidRef}
+          className="mt-11 mb-10 lg:mt-0 text-center text-4xl"
+        >
+          Android App Development
+        </h1>
+        <div className="flex justify-around items-center">
+          <Project />
+          <Project />
+        </div>
+      </div>
+      <div>
+        <h1 ref={reactRef} className="mt-11 mb-10 lg:mt-0 text-center text-4xl">
+          React JS
+        </h1>
+        <div className="flex justify-around items-center">
+          <Project />
+          <Project />
+        </div>
+      </div>
     </div>
   );
 }
