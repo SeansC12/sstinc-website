@@ -1,27 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Header from "../components/Header";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import Project from "../components/Project";
 
 function PastProjects() {
-  const gradientColourScheme = "from-[#0d81fe] via-[#0bc3f0] to-[#00f9e2]";
+  const gradientColourScheme =
+    "bg-gradient-to-r from-[#0d81fe] via-[#0bc3f0] to-[#00f9e2]";
 
   let [iosUnderline, setIOSUnderline] = useState(false);
+  const iosRef = useRef();
   let [androidUnderline, setAndroidUnderline] = useState(false);
+  const androidRef = useRef();
   let [reactUnderline, setReactUnderline] = useState(false);
-
-  const projects = [
-    {
-      title: "Tasks App",
-      subtitle: "SwiftUI",
-      description: "An App that helps people do action",
-    },
-    {
-      title: "React Tracks",
-      subtitle: "React and Python",
-      description: "failure",
-      image: "https://picsum.photos/2000",
-    },
-  ];
+  const reactRef = useRef();
 
   const frameworkNameDivVariants = {
     hidden: {
@@ -51,11 +42,32 @@ function PastProjects() {
     },
   };
 
+  const executeIOSScroll = () => {
+    iosRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const executeAndroidScroll = () => {
+    androidRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const executeReactScroll = () => {
+    reactRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "middle",
+    });
+  };
+
   return (
-    <>
+    <div className="relative">
       <Header tab={"Past Projects"} />
       <div
-        className={`bg-gradient-to-r ${gradientColourScheme} bg-black h-[75vh] w-full flex flex-col items-center justify-center text-white`}
+        className={`bg-[#0d81fe] h-[60vh] w-full flex flex-col items-center justify-center text-white z-0 relative`}
       >
         <div className="text-center mb-28 mt-16">
           <p className="text-7xl mb-20">Our Projects</p>
@@ -75,6 +87,7 @@ function PastProjects() {
                   setIOSUnderline(false);
                   console.log("Mouse left");
                 }}
+                onClick={executeIOSScroll}
               >
                 <p>iOS App Development</p>
                 <motion.div
@@ -100,6 +113,7 @@ function PastProjects() {
                   setAndroidUnderline(false);
                   console.log("Mouse left");
                 }}
+                onClick={executeAndroidScroll}
               >
                 <p>Android App Development</p>
                 <motion.div
@@ -125,6 +139,7 @@ function PastProjects() {
                   setReactUnderline(false);
                   console.log("Mouse left");
                 }}
+                onClick={executeReactScroll}
               >
                 <p>React JS</p>
                 <motion.div
@@ -138,7 +153,20 @@ function PastProjects() {
           </div>
         </div>
       </div>
-    </>
+      {/* bg-no-repeat bg-center bg-cover */}
+
+      <div className="aspect-[1440/260] bg-[url('../svg/layered-waves-4.svg')]" />
+
+      <h1 ref={iosRef} className="text-center text-4xl h-[100vh]">
+        iOS App Development
+      </h1>
+      <h1 ref={androidRef} className="text-center text-4xl h-[100vh]">
+        Android App Development
+      </h1>
+      <h1 ref={reactRef} className="text-center text-4xl h-[100vh]">
+        React JS
+      </h1>
+    </div>
   );
 }
 
