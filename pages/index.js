@@ -87,7 +87,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 text-center">
             <div>
               <p>android</p>
-              <img className="w-full lg:p-24" src="androidLogo.png"></img>
+              <img className="w-full lg:p-24" src="androidLogo.svg"></img>
               <p>
                 Use Android Studio to build powerful native apps for Android,
                 the most widely used OS for phones
