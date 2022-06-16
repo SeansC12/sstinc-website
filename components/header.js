@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Disclosure } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
   {
@@ -69,7 +68,8 @@ export default function Header({ tab }) {
               <div className="hidden sm:flex items-center py-2 px-2">
                 {/* <div className="w-full h-full"> */}
                 {navigation.map((item) => (
-                  <Link
+                  <Link 
+                  key={item.name}
                     href={item.href}
                     aria-current={item.current ? "page" : undefined}
                   >
