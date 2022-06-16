@@ -53,6 +53,85 @@ export default function Header({ tab }) {
     }
   }
   return (
+    <div className="min-h-full">
+      <Disclosure as="nav" className="bg-white">
+        {({ open }) => (
+          <>
+            <div className="items-centre flex">
+              <div className="p-2 cursor-pointer">
+                <Link href="/">
+                  <Image
+                    src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              </div>
+              <div className="hidden sm:flex items-center py-2 px-2">
+                {/* <div className="w-full h-full"> */}
+                {navigation.map((item) => (
+                  <Link
+                    href={item.href}
+                    aria-current={item.current ? "page" : undefined}
+                  >
+                    <div
+                      className={classNames(
+                        item.current
+                          ? "bg-gray-900 ml-5 text-white"
+                          : "text-black hover:bg-gray-700 hover:text-white ml-5",
+                        "px-3 py-2 rounded-md text-sm font-medium ml-5 h-fit cursor-pointer text-center"
+                      )}
+                    >
+                      {item.name}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              {/* mobile menu */}
+              <div className="w-full">
+                <Disclosure.Button className="float-right m-3 h-fit bg-gray-800 items-center justify-center p-3 rounded-md text-gray-400 sm:hidden">
+                  {open ? (
+                    <XIcon
+                      className="block h-6 w-6 float-right"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+            </div>
+            <div className="">
+              <Disclosure.Panel className="sm:hidden">
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                  {navigation.map((item) => (
+                    <Disclosure.Button
+                      key={item.name}
+                      as="a"
+                      href={item.href}
+                      className={classNames(
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block px-3 py-2 rounded-md text-base font-medium"
+                      )}
+                      aria-current={item.current ? "page" : undefined}
+                    >
+                      {item.name}
+                    </Disclosure.Button>
+                  ))}
+                </div>
+              </Disclosure.Panel>
+            </div>
+          </>
+        )}
+      </Disclosure>
+
+      <div className="shadow border-b"></div>
+    </div>
+  );
+
+  return (
     <>
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-white">
@@ -63,22 +142,18 @@ export default function Header({ tab }) {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <Link href="/" className="cursor-pointer">
-                        <div>
-                          <Image
-                            src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
-                            width={52}
-                            height={52}
-                          />
-                        </div>
+                        <Image
+                          src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
+                          width={52}
+                          height={52}
+                        />
                       </Link>
                     </div>
                     <div className=" hidden sm:visible md:block sm:flex sm:justify-center">
-                      <div className="ml-10 flex flex-row space-x-4">
-                        <div className="justify-self-center">
-                          {navigation.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
+                      <div className="justify-self-center">
+                        {navigation.map((item) => (
+                          <Link href={item.href}>
+                            <div
                               className={classNames(
                                 item.current
                                   ? "bg-gray-900 ml-5 text-white"
@@ -88,9 +163,9 @@ export default function Header({ tab }) {
                               aria-current={item.current ? "page" : undefined}
                             >
                               {item.name}
-                            </a>
-                          ))}
-                        </div>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </div>

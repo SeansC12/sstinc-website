@@ -10,6 +10,21 @@ import '../public/reactLogo.svg'
 import '../public/swiftLogo.png'
 import Footer from "../components/Footer";
 
+const courses = [
+  {
+    name: "React",
+    image: "../public/reactLogo.svg",
+  },
+  {
+    name: "iOS",
+    image: "../public/swiftLogo.png",
+  },
+  {
+    name: "Android",
+    image: "../public/androidLogo.svg",
+  },
+];
+
 export default function Home() {
   return (
     <div>
@@ -72,16 +87,19 @@ export default function Home() {
           <div className="grid md:grid-cols-3 text-center">
             <div>
               <p>android</p>
-              <img className="w-full lg:p-24" src='androidLogo.svg'></img>
-              <p>Use Android Studio to build powerful native apps for Android, the most widely used OS for phones</p>
+              <img className="w-full lg:p-24" src="androidLogo.png"></img>
+              <p>
+                Use Android Studio to build powerful native apps for Android,
+                the most widely used OS for phones
+              </p>
             </div>
             <div>
               <p>reactjs</p>
-              <img className="w-full lg:p-24" src='reactLogo.svg'></img>
+              <img className="w-full lg:p-24" src="reactLogo.svg"></img>
             </div>
             <div>
               <p>swift</p>
-              <img className="w-full lg:p-24" src='swiftLogo.png'></img>
+              <img className="w-full lg:p-24" src="swiftLogo.png"></img>
             </div>
           </div>
         </div>
@@ -107,7 +125,7 @@ export default function Home() {
             </div>
           </div>
         </div> */}
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
