@@ -57,13 +57,12 @@ export default function Header({ tab }) {
       <Disclosure as="nav" className="bg-white">
         {({ open }) => (
           <>
-            <div className="items-centre flex">
-              <div className="p-2 cursor-pointer">
+            <div className="items-centre flex h-20">
+              <div className="w-max">
                 <Link href="/">
-                  <Image
+                  <img
                     src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
-                    width={100}
-                    height={100}
+                    className="h-full object-contain cursor-pointer pl-3 sm:w-64 -mt-1"
                   />
                 </Link>
               </div>
@@ -79,7 +78,7 @@ export default function Header({ tab }) {
                         item.current
                           ? "bg-gray-900 ml-5 text-white"
                           : "text-black hover:bg-gray-700 hover:text-white ml-5",
-                        "px-3 py-2 rounded-md text-sm font-medium ml-5 h-fit cursor-pointer text-center"
+                        "px-3 py-2 rounded-md text-sm font-medium ml-5 h-fit w-max cursor-pointer text-center"
                       )}
                     >
                       {item.name}
@@ -88,11 +87,11 @@ export default function Header({ tab }) {
                 ))}
               </div>
               {/* mobile menu */}
-              <div className="w-full">
+              <div className="w-full h-full items-center">
                 <Disclosure.Button className="float-right m-3 h-fit bg-gray-800 items-center justify-center p-3 rounded-md text-gray-400 sm:hidden">
                   {open ? (
                     <XIcon
-                      className="block h-6 w-6 float-right"
+                      className="block h-6 w-6 "
                       aria-hidden="true"
                     />
                   ) : (
@@ -130,7 +129,23 @@ export default function Header({ tab }) {
       <div className="shadow border-b"></div>
     </div>
   );
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function f() {
   return (
     <>
       <div className="min-h-full">
