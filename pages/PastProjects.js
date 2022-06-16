@@ -129,7 +129,7 @@ function PastProjects() {
   const executeReactScroll = () => {
     reactRef.current.scrollIntoView({
       behavior: "smooth",
-      block: "middle",
+      block: "start",
     });
   };
 
@@ -247,7 +247,6 @@ function PastProjects() {
         <div className="flex justify-around items-center">
           {androidProjectComponents.map((project, key) => {
             return <div key={key}>{project}</div>;
-            console.log(project);
           })}
         </div>
       </div>
@@ -258,7 +257,6 @@ function PastProjects() {
         <div className="flex justify-around items-center">
           {reactProjectComponents.map((project, key) => {
             return <div key={key}>{project}</div>;
-            console.log(project);
           })}
         </div>
       </div>
