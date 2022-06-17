@@ -56,12 +56,12 @@ export default function Header({ tab }) {
       <Disclosure as="nav" className="bg-white">
         {({ open }) => (
           <>
-            <div className="items-centre flex h-20">
+            <div className="items-centre flex h-16">
               <div className="w-max">
                 <Link href="/">
                   <img
                     src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
-                    className="h-full object-contain cursor-pointer pl-3 sm:w-64 -mt-1"
+                    className="h-full object-contain cursor-pointer pl-3 sm:w-52 -mt-1"
                   />
                 </Link>
               </div>
