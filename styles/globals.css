@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Courier Prime";
+    src: url("/fonts/Courier-Prime-Regular") format("woff2");
+  },
+  @font-face {
+    font-family: "Source Code Pro";
+    src: url("/fonts/Source-Code-Pro-ExtraLight") format("woff2");
+  }
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Bold") format("woff2");
+  }
+}

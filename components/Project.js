@@ -1,31 +1,140 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-export default function Project({ project }) {
-  const [expanded, setExpanded] = useState(false);
+function Project({ projectInfo }) {
+  const name = projectInfo.name;
+  const description = projectInfo.description;
+  const team = projectInfo.team;
+  const imageLink = projectInfo.imageLink;
+
+  let [isMouseHoveringOnProject, setIsMouseHoveringOnProject] = useState(false);
+
+  const projectDivVariant = {
+    mouseHovering: {
+      scale: 1,
+    },
+    mouseNotHovering: {
+      scale: 1,
+    },
+  };
+
+  const imageVariant = {
+    mouseHovering: {
+      scale: 0.95,
+      transition: {
+        type: "tween",
+        duration: 0.4,
+      },
+    },
+    mouseNotHovering: {
+      scale: 1,
+      transition: {
+        type: "tween",
+        duration: 0.4,
+      },
+    },
+  };
+
+  const textVariant = {
+    mouseHovering: {
+      x: 25,
+      originX: 0,
+      transition: {
+        type: "tween",
+        duration: "0.4",
+      },
+    },
+    mouseNotHovering: {
+      x: 0,
+      transition: {
+        type: "tween",
+        duration: "0.4",
+      },
+    },
+  };
+
+  const lineVariant = {
+    mouseHovering: {
+      scale: 1,
+      originX: 0,
+      transition: {
+        type: "tween",
+        duration: 0.4,
+      },
+    },
+    mouseNotHovering: {
+      scale: 0,
+      originY: 0,
+      transition: {
+        type: "tween",
+        duration: 0.4,
+      },
+    },
+  };
+
   return (
-    // <div
-    //   className={
-    //     "flex bg-opacity-50 h-60 border-4 m-14 rounded-xl justify-center place-items-center bg-[url('https://picsum.photos/2000')] hover:shadow-2xl"
-    //   }
-    // >
-    //   <div className="grid place-items-center justify-center mx-6">
-    //     <p className="text-green-500 text-l xl:text-xl">{project.title}</p>
-    //     <p className="text-blue-700 text-xl xl:text-3xl">{project.description}</p>
-    //     <p className="text-black text-xl">{project.subtitle}</p>
-    //   </div>
-    // </div>
-    <div className="w-screen h-screen mt-5">
-      <img
-        className="h-screen object-cover w-screen opacity-30 absolute z-0"
-        src={project.image}
-      ></img>
-      <div className="h-screen flex items-center justify-center text-center relative z-20">
+    <motion.div
+      initial="mouseNotHovering"
+      whileHover="mouseHovering"
+      variants={projectDivVariant}
+      onMouseEnter={() => {
+        setIsMouseHoveringOnProject(true);
+      }}
+      onMouseLeave={() => {
+        setIsMouseHoveringOnProject(false);
+      }}
+      onClick={() => {
+        setIsMouseHoveringOnProject(true);
+        isMouseHoveringOnProject.freeze();
+      }}
+      className="cursor-pointer"
+    >
+      <motion.img
+        initial={false}
+        animate={
+          isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
+        }
+        variants={imageVariant}
+        className="object-cover mb-10"
+        width={580}
+        height={594}
+        src={imageLink}
+      />
+      <h1 className="text-5xl mb-6">{name}</h1>
+      <div className="flex flex-row">
+        <motion.div
+          initial={false}
+          animate={
+            isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
+          }
+          variants={lineVariant}
+          className="ml-5 border-l-[1px] h-[70px] border-white"
+        />
         <div>
-          <p className="text-l xl:text-xl">{project.title}</p>
-          <p className="text-xl xl:text-3xl">{project.description}</p>
-          <p className="text-xl">{project.subtitle}</p>
+          <motion.h2
+            initial={false}
+            animate={
+              isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
+            }
+            variants={textVariant}
+            className="text-lg mb-2"
+          >
+            {description}
+          </motion.h2>
+          <motion.h3
+            initial={false}
+            animate={
+              isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
+            }
+            variants={textVariant}
+            className="text-lg font-extralight"
+          >
+            {team}
+          </motion.h3>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
+
+export default Project;
