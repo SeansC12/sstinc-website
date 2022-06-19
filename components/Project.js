@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import getWindowDimensions from "../hooks/getWindowDimensions";
 
 function Project({ projectInfo }) {
   const name = projectInfo.name;
   const description = projectInfo.description;
   const team = projectInfo.team;
   const imageLink = projectInfo.imageLink;
+  let imageWidth = 0;
+  let imageHeight = 0;
 
   let [isMouseHoveringOnProject, setIsMouseHoveringOnProject] = useState(false);
 
@@ -60,6 +63,7 @@ function Project({ projectInfo }) {
       transition: {
         type: "tween",
         duration: 0.4,
+        delay: 0.1,
       },
     },
     mouseNotHovering: {
@@ -72,6 +76,14 @@ function Project({ projectInfo }) {
     },
   };
 
+  if (getWindowDimensions().width < 640) {
+    imageWidth = 280;
+    imageHeight = 294;
+  } else {
+    imageWidth = 580;
+    imageHeight = 594;
+  }
+
   return (
     <motion.div
       initial="mouseNotHovering"
@@ -83,10 +95,6 @@ function Project({ projectInfo }) {
       onMouseLeave={() => {
         setIsMouseHoveringOnProject(false);
       }}
-      onClick={() => {
-        setIsMouseHoveringOnProject(true);
-        isMouseHoveringOnProject.freeze();
-      }}
       className="cursor-pointer"
     >
       <motion.img
@@ -95,20 +103,20 @@ function Project({ projectInfo }) {
           isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
         }
         variants={imageVariant}
-        className="object-cover mb-10"
-        width={580}
-        height={594}
+        className="object-cover mb-4 sm:mb-10"
+        width={imageWidth}
+        height={imageHeight}
         src={imageLink}
       />
-      <h1 className="text-5xl mb-6">{name}</h1>
-      <div className="flex flex-row">
+      <h1 className="text-3xl mb-2 lg:text-5xl sm:mb-6">{name}</h1>
+      <div className="flex flex-row relative">
         <motion.div
           initial={false}
           animate={
             isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
           }
           variants={lineVariant}
-          className="ml-5 border-l-[1px] h-[70px] border-white"
+          className="absolute left-[6px] border-l-[1px] sm:h-[70px] h-[55px] border-white"
         />
         <div>
           <motion.h2
@@ -117,7 +125,7 @@ function Project({ projectInfo }) {
               isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
             }
             variants={textVariant}
-            className="text-lg mb-2"
+            className="text-base lg:text-lg mb-2"
           >
             {description}
           </motion.h2>
@@ -127,7 +135,7 @@ function Project({ projectInfo }) {
               isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
             }
             variants={textVariant}
-            className="text-lg font-extralight"
+            className="text-base lg:text-lg font-extralight"
           >
             {team}
           </motion.h3>
