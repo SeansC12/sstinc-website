@@ -28,7 +28,7 @@ const courses = [
 ];
 
 export default function Home() {
-  const courseHeader = useAnimation()
+  
 
   return (
     <div>
@@ -49,8 +49,8 @@ export default function Home() {
               ></motion.img>
             </div>
           </div>
-          <div className="h-screen bg-[#DC4267] flex justify-center items-center relative -mt-2">
-            <motion.h3 animate={courseHeader} className="w-fit">Our Courses</motion.h3>
+          <div className="h-screen bg-[#DC4267] flex justify-center items-center relative -mt-14">
+            <motion.h1 whileInView={{scale: 1.3}} transition={{duration: 0.5}} className="w-fit text-4xl">Our Courses</motion.h1>
           </div>
         </div>
       </main>
