@@ -103,7 +103,7 @@ function Project({ projectInfo }) {
           isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
         }
         variants={imageVariant}
-        className="object-cover mb-4 sm:mb-10"
+        className="object-cover mb-4 sm:mb-10 rounded-xl"
         width={imageWidth}
         height={imageHeight}
         src={imageLink}

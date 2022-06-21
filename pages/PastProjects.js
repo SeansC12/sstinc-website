@@ -298,7 +298,7 @@ function PastProjects() {
         <h1 ref={iosRef} className="mt-11 mb-10 lg:mt-0 text-center text-4xl">
           iOS App Development
         </h1>
-        <div className="flex flex-col items-center lg:flex-row lg:justify-around">
+        <div className="flex flex-col items-center mx-5 sm:mx-0 lg:flex-row lg:justify-around">
           {iosProjectComponents.map((project, key) => {
             return (
               <div className="mb-12 lg:mb-0" key={key}>
@@ -325,7 +325,7 @@ function PastProjects() {
         >
           Android App Development
         </h1>
-        <div className="flex flex-col items-center lg:flex-row lg:justify-around">
+        <div className="flex flex-col items-center mx-5 sm:mx-0 lg:flex-row lg:justify-around">
           {androidProjectComponents.map((project, key) => {
             return (
               <div className="mb-12 lg:mb-0" key={key}>
@@ -349,7 +349,7 @@ function PastProjects() {
         <h1 ref={reactRef} className="mt-11 mb-10 lg:mt-0 text-center text-4xl">
           React JS
         </h1>
-        <div className="flex flex-col items-center lg:flex-row lg:justify-around">
+        <div className="flex flex-col items-center mx-5 sm:mx-0 lg:flex-row lg:justify-around">
           {reactProjectComponents.map((project, key) => {
             return (
               <div className="mb-12 lg:mb-0" key={key}>
