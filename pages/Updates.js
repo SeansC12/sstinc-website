@@ -44,21 +44,18 @@ const latestNews = {
 };
 
 export default function Home() {
-  const [allNews, setAllNews] = useState([]);
-
   return (
     <div>
       <Header tab="Updates" />
       <div className="flex items-center justify-center flex-col bg-[#001220] text-white">
         <div className="mt-8 mb-8 text-3xl">Latest News</div>
-
-        <div className="grid grid-cols-2 grid-rows-3 gap-8">
-          <div className="col-start-1 col-span-2 row-start-1 row-span-1">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-3 gap-8 m-auto mx-5 max-w-4xl">
+          <div className="md:col-start-1 md:col-span-2 md:row-start-1 md:row-span-1">
             <LargePostStreamCard data={latestNews} />
           </div>
-          {postStream.map((item) => (
+          {postStream.map((item, key) => (
             <SmallPostStreamCard
-              key={postStream.indexOf(item)}
+              key={key}
               className="px-4 py-6 sm:px-0"
               data={item}
             />
