@@ -108,7 +108,7 @@ export default function Header({ tab }) {
                       className={classNames(
                         item.current
                           ? "bg-gray-800 text-white"
-                          : "text-gray-800 hover:bg-gray-700",
+                          : "text-gray-800 hover:bg-gray-700 hover:text-white",
                         "block px-3 py-2 rounded-md text-base font-medium"
                       )}
                       aria-current={item.current ? "page" : undefined}
