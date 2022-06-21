@@ -106,7 +106,7 @@ export default function AboutUs() {
     <div>
       <Header tab="About Us" />
 
-      <div>
+      {/* <div> */}
         {/* <ParallaxProvider>
           <div ref={parallaxBannerRef} className="h-screen">
             <ParallaxBanner
@@ -152,11 +152,18 @@ export default function AboutUs() {
             </div>
           </div>
         )} */}
+        <center>
+          <Image
+            src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no?authuser=0"
+            width={180}
+            height={180}
+          />
+        </center>
 
-        <div className="grid grid-rows-3 sm:grid-rows-1 sm:grid sm:grid-cols-3">
+        {/* <div className="grid grid-rows-3 sm:grid-rows-1 sm:grid sm:grid-cols-3">
           <div className="flex items-center justify-center row-start-1 row-end-2 sm:col-start-1 sm:col-end-2 ml-5">
             <ul className="sm:my-5 sm:ml-5 text-center list-disc text-xl">
-              {/* <li>We are based in Singapore!</li> */}
+              <li>We are based in Singapore!</li>
             </ul>
           </div>
           <div className="self-center sm:col-start-2 sm:col-end-3">
@@ -170,11 +177,11 @@ export default function AboutUs() {
           </div>
           <div className="flex items-center justify-center sm:col-start-3 sm:col-end-4">
             <ul className="sm:my-5 ml-5 text-center list-disc text-xl">
-              {/* <li>SST Inc. is the best!</li> */}
+              <li>SST Inc. is the best!</li>
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="text-center grid place-items-center">
         <h1 className="text-5xl py-8 mt-16 font-mono font-semibold">
