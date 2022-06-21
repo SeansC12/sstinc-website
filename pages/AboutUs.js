@@ -107,7 +107,7 @@ export default function AboutUs() {
       <Header tab="About Us" />
 
       <div>
-        <ParallaxProvider>
+        {/* <ParallaxProvider>
           <div ref={parallaxBannerRef} className="h-screen">
             <ParallaxBanner
               layers={[
@@ -135,7 +135,7 @@ export default function AboutUs() {
               </div>
             </ParallaxBanner>
           </div>
-        </ParallaxProvider>
+        </ParallaxProvider> */}
 
         {getWindowDimensions().width < 640 && (
           <div className="mx-6 mt-10">
