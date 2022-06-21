@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import LargePostStreamCard from "../components/LargePostStreamCard";
 import SmallPostStreamCard from "../components/SmallPostStreamCard";
 import Footer from "../components/Footer";
@@ -45,10 +46,10 @@ const latestNews = {
 };
 
 export default function Home() {
-  const [allNews, setAllNews] = useState([]);
+  // const [allNews, setAllNews] = useState([]);
 
   return (
-    <div>
+    <div className="">
       <Header tab="Updates" />
 <<<<<<< Updated upstream
       <div className="flex items-center justify-center flex-col bg-[#001220] text-white">

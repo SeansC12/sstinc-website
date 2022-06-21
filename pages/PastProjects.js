@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Header from "../components/Header";
 import { motion } from "framer-motion";
 import Project from "../components/Project";
+import Footer from "../components/Footer";
 import getWindowDimensions from "../hooks/getWindowDimensions";
 
 function PastProjects() {
