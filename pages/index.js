@@ -13,6 +13,7 @@ import Footer from "../components/Footer";
 import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
+import { useRef } from "react";
 
 const courses = [
   {
@@ -71,6 +72,7 @@ const careerStages = [
 export default function Home() {
   const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
   const [currentStage, setCurrentStage] = useState(0);
+
   return (
     <div>
       <Header tab="Home" />
@@ -139,20 +141,21 @@ export default function Home() {
         </div>
 
         <div className="bg-[#001220] h-screen items-center flex justify-center">
-          <div className="w-[60vw] h-[60vh] rounded-[30px] bg-white flex items-center justify-centre">
+          {/* <div className="w-fit md:w-[60vw] h-fit p-10  rounded-[30px] bg-white flex items-center justify-centre"> */}
             <button
-              onClick={() =>
+              onClick={() => {
+                // console.log(divDimension)
                 setCurrentStage((x) =>
                   x == 0 ? (x = careerStages.length - 1) : x - 1
-                )
-              }
-              className="p-2 bg-orange-300 rounded-full text-3xl text-center m-2 "
+                );
+              }}
+              className="p-2 bg-orange-300 rounded-full text-3xl text-center m-2 ml-5"
             >
               <RiArrowLeftSLine className="w-8 h-8" />
             </button>
 
-            <div className="w-full text-center font-mono px-10">
-              <div>
+            <div className="w-full  text-center font-mono px-10">
+              <div className="h-full">
                 <p className="text-3xl font-semibold text-[#DC4267]">
                   {currentStage + 1}. {careerStages[currentStage].header}
                 </p>
@@ -161,40 +164,41 @@ export default function Home() {
                 </p>
                 <p>{careerStages[currentStage].description}</p>
               </div>
-              <div className="h-fit w-full flex justify-center items-center mt-10">
-                <div className="h-10 w-10 grid place-items-center bg-orange-200 rounded-full">
-                  1
+              <div className="h-fit w-full mb-0 flex justify-center items-center mt-10 relative">
+                <div className="shadow h-1 w-full">
+                  <motion.div
+                    className={`bg-orange-300 h-1 ${`w-[25%]`}`}
+                    animate={{ scaleX: currentStage, originX: 0 }}
+                    initial={{ scaleX: 0}}
+                    transition={{ duration: 1 }}
+                  ></motion.div>
                 </div>
-                <div className="w-28 h-1 bg-orange-400" />
-                <div className="h-10 w-10 grid place-items-center bg-orange-200 rounded-full">
-                  2
-                </div>
-                <div className="w-28 h-1 bg-orange-400" />
-                <div className="h-10 w-10 grid place-items-center bg-orange-200 rounded-full">
-                  3
-                </div>
-                <div className="w-28 h-1 bg-orange-400" />
-                <div className="h-10 w-10 grid place-items-center bg-orange-200 rounded-full">
-                  4
-                </div>
-                <div className="w-28 h-1 bg-orange-400" />
-                <div className="h-10 w-10 grid place-items-center bg-orange-200 rounded-full">
-                  5
+                <div className="flex absolute w-full justify-center">
+                  {[0, 1, 2, 3, 4].map((stage) => { return(
+                    <div key={stage}
+                      className={`h-10 w-10 shadow grid place-items-center bg-orange-200 rounded-full cursor-pointer m${stage == 0 ? "r" : stage == 4 ? "l" : "x"}-auto ${
+                        currentStage == stage &&
+                        "border-black border-4 bg-orange-200"
+                      }`}
+                      onClick={() => setCurrentStage(stage)}
+                    >
+                      {stage+1}
+                    </div>)
+                  })}
                 </div>
               </div>
             </div>
-
             <button
               onClick={() =>
                 setCurrentStage((x) =>
                   x == careerStages.length - 1 ? 0 : x + 1
                 )
               }
-              className="p-2 bg-orange-300 rounded-full text-3xl text-centre m-2"
+              className="p-2 bg-orange-300 rounded-full text-3xl text-centre m-2 mr-5"
             >
               <RiArrowRightSLine className="w-8 h-8" />
             </button>
-          </div>
+          {/* </div> */}
         </div>
       </main>
       {/* <Footer className="absolute" /> */}
