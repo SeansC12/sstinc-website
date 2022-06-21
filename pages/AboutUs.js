@@ -107,8 +107,8 @@ export default function AboutUs() {
     <div>
       <Header tab="About Us" />
 
-      <div>
-        <ParallaxProvider>
+      {/* <div> */}
+        {/* <ParallaxProvider>
           <div ref={parallaxBannerRef} className="h-screen">
             <ParallaxBanner
               layers={[
@@ -136,9 +136,9 @@ export default function AboutUs() {
               </div>
             </ParallaxBanner>
           </div>
-        </ParallaxProvider>
+        </ParallaxProvider> */}
 
-        {getWindowDimensions().width < 640 && (
+        {/* {getWindowDimensions().width < 640 && (
           <div className="mx-6 mt-10">
             <div className="font:Inter font-normal text-center text-black text-3xl">
               <u>Who are we?</u>
@@ -152,9 +152,16 @@ export default function AboutUs() {
               <strong>better our world.</strong>
             </div>
           </div>
-        )}
+        )} */}
+        <center>
+          <Image
+            src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no?authuser=0"
+            width={180}
+            height={180}
+          />
+        </center>
 
-        <div className="grid grid-rows-3 sm:grid-rows-1 sm:grid sm:grid-cols-3">
+        {/* <div className="grid grid-rows-3 sm:grid-rows-1 sm:grid sm:grid-cols-3">
           <div className="flex items-center justify-center row-start-1 row-end-2 sm:col-start-1 sm:col-end-2 ml-5">
             <ul className="sm:my-5 sm:ml-5 text-center list-disc text-xl">
               <li>We are based in Singapore!</li>
@@ -175,10 +182,10 @@ export default function AboutUs() {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="text-center grid place-items-center">
-        <h1 className="text-5xl py-8 mt-16 font-mono font-semibold">
+        <h1 className="text-5xl py-8 mt-0 font-mono font-semibold">
           2022/23 Executive Committee
         </h1>
         <div className="grid lg:grid-cols-5 w-fit">
