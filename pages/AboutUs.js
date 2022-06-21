@@ -184,7 +184,7 @@ export default function AboutUs() {
       </div> */}
 
       <div className="text-center grid place-items-center">
-        <h1 className="text-5xl py-8 mt-16 font-mono font-semibold">
+        <h1 className="text-5xl py-8 mt-0 font-mono font-semibold">
           2022/23 Executive Committee
         </h1>
         <div className="grid lg:grid-cols-5 w-fit">
