@@ -18,12 +18,6 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function changeColour(stage) {
-  setTimeout(100)
-  console.log("hi")
-}
-
-changeColour(2)
 
 const courses = [
   {

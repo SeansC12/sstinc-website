@@ -2,7 +2,8 @@ import React from "react";
 
 function LargePostStreamCard({ data }) {
   return (
-    <div className="inline-block relative w-full h-[468px] border border-white text-white rounded-xl overflow-hidden cursor-pointer">
+    <div className="inline-block relative w-full h-[468px] border border-white text-white rounded-xl overflow-hidden
+    ">
       <div className="shrink-0">
         <img
           className="h-full w-full absolute object-cover brightness-75"

@@ -2,7 +2,7 @@ import React from "react";
 
 function SmallPostStreamCard({ data }) {
   return (
-    <div className="relative w-[472px] h-[468px] border border-white rounded-xl overflow-hidden cursor-pointer">
+    <div className="relative w-[472px] h-[468px] border border-white rounded-xl overflow-hidden">
       <div className="shrink-0">
         <img
           className="h-[266px] w-full object-cover"

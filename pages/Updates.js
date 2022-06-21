@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LargePostStreamCard from "../components/LargePostStreamCard";
 import SmallPostStreamCard from "../components/SmallPostStreamCard";
-import Footer from "../components/Footer";
 
 const postStream = [
   {
@@ -51,8 +50,7 @@ export default function Home() {
   return (
     <div className="">
       <Header tab="Updates" />
-<<<<<<< Updated upstream
-      <div className="flex items-center justify-center flex-col bg-[#001220] text-white">
+      <div className="flex items-center justify-center flex-col bg-[#001220] text-white pb-28">
         <div className="mt-8 mb-8 text-3xl">Latest News</div>
 
         <div className="grid grid-cols-2 grid-rows-3 gap-8">
@@ -62,23 +60,13 @@ export default function Home() {
           {postStream.map((item) => (
             <SmallPostStreamCard
               key={postStream.indexOf(item)}
-=======
-      <div className="">
-        <div className="">
-          {dummyData.map((item) => (
-            <PostStreamCard
-              key={dummyData.indexOf(item)}
->>>>>>> Stashed changes
               className="px-4 py-6 sm:px-0"
               data={item}
             />
           ))}
         </div>
       </div>
-<<<<<<< Updated upstream
-=======
       <Footer />
->>>>>>> Stashed changes
     </div>
   );
 }
