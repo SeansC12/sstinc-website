@@ -156,7 +156,7 @@ export default function AboutUs() {
         <div className="grid grid-rows-3 sm:grid-rows-1 sm:grid sm:grid-cols-3">
           <div className="flex items-center justify-center row-start-1 row-end-2 sm:col-start-1 sm:col-end-2 ml-5">
             <ul className="sm:my-5 sm:ml-5 text-center list-disc text-xl">
-              <li>We are based in Singapore!</li>
+              {/* <li>We are based in Singapore!</li> */}
             </ul>
           </div>
           <div className="self-center sm:col-start-2 sm:col-end-3">
@@ -170,7 +170,7 @@ export default function AboutUs() {
           </div>
           <div className="flex items-center justify-center sm:col-start-3 sm:col-end-4">
             <ul className="sm:my-5 ml-5 text-center list-disc text-xl">
-              <li>SST Inc. is the best!</li>
+              {/* <li>SST Inc. is the best!</li> */}
             </ul>
           </div>
         </div>
