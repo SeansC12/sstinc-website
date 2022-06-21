@@ -137,7 +137,7 @@ export default function AboutUs() {
           </div>
         </ParallaxProvider> */}
 
-        {getWindowDimensions().width < 640 && (
+        {/* {getWindowDimensions().width < 640 && (
           <div className="mx-6 mt-10">
             <div className="font:Inter font-normal text-center text-black text-3xl">
               <u>Who are we?</u>
@@ -151,7 +151,7 @@ export default function AboutUs() {
               <strong>better our world.</strong>
             </div>
           </div>
-        )}
+        )} */}
 
         <div className="grid grid-rows-3 sm:grid-rows-1 sm:grid sm:grid-cols-3">
           <div className="flex items-center justify-center row-start-1 row-end-2 sm:col-start-1 sm:col-end-2 ml-5">
