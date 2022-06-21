@@ -30,7 +30,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="h-0 md:h-full w-0 md:w-[1px] bg-slate-400 m-0 md:mx-10" />
-          <div className="float-right w-1/2 mr-10">
+          <div className="float-right md:w-1/2 mr-0 sm: w-full">
             <p className="text-2xl">Contact Us</p>
             <p className="Email:"></p>
             <form
