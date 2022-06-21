@@ -18,6 +18,13 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+function changeColour(stage) {
+  setTimeout(100)
+  console.log("hi")
+}
+
+changeColour(2)
+
 const courses = [
   {
     name: "ReactJS",
@@ -157,7 +164,7 @@ export default function Home() {
               <RiArrowLeftSLine className="w-8 h-8" />
             </button>
 
-            <div className="w-full  text-center font-mono px-10">
+            <div className="w-full text-center font-mono px-10 h-[80%]">
               <div className="h-full">
                 <p className="text-3xl font-semibold text-[#DC4267]">
                   {currentStage + 1}. {careerStages[currentStage].header}
@@ -188,13 +195,13 @@ export default function Home() {
                             : stage == 4
                             ? "ml-auto"
                             : "mx-auto",
-                          currentStage == stage
+                          currentStage >= stage
                             ? "border-orange-300 text-white"
                             : " border-2  text-black"
                         )}
                         animate={{
                           backgroundColor:
-                            stage == currentStage
+                            stage <= currentStage
                               ? ["rgb(255,255,255)", "rgb(253, 186, 116)"]
                               : ["rgb(255, 255, 255)", "rgb(255,255,255)"],
                         }}
