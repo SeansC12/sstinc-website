@@ -10,10 +10,13 @@ import "../public/reactLogo.svg";
 import "../public/swiftLogo.png";
 import "../public/homeWaves.svg";
 import Footer from "../components/Footer";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
-import { useRef } from "react";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const courses = [
   {
@@ -141,7 +144,7 @@ export default function Home() {
         </div>
 
         <div className="bg-[#001220] h-screen items-center flex justify-center">
-          {/* <div className="w-fit md:w-[60vw] h-fit p-10  rounded-[30px] bg-white flex items-center justify-centre"> */}
+          <div className="w-[60vw] h-[60vh] p-10  rounded-[30px] bg-white flex items-center justify-centre">
             <button
               onClick={() => {
                 // console.log(divDimension)
@@ -167,23 +170,40 @@ export default function Home() {
               <div className="h-fit w-full mb-0 flex justify-center items-center mt-10 relative">
                 <div className="shadow h-1 w-full">
                   <motion.div
-                    className={`bg-orange-300 h-1 ${`w-[25%]`}`}
+                    className="bg-orange-300 h-1 w-[25%]"
                     animate={{ scaleX: currentStage, originX: 0 }}
-                    initial={{ scaleX: 0}}
-                    transition={{ duration: 1 }}
+                    initial={{ scaleX: 0 }}
+                    transition={{ duration: 0.5 }}
                   ></motion.div>
                 </div>
                 <div className="flex absolute w-full justify-center">
-                  {[0, 1, 2, 3, 4].map((stage) => { return(
-                    <div key={stage}
-                      className={`h-10 w-10 shadow grid place-items-center bg-orange-200 rounded-full cursor-pointer m${stage == 0 ? "r" : stage == 4 ? "l" : "x"}-auto ${
-                        currentStage == stage &&
-                        "border-black border-4 bg-orange-200"
-                      }`}
-                      onClick={() => setCurrentStage(stage)}
-                    >
-                      {stage+1}
-                    </div>)
+                  {[0, 1, 2, 3, 4].map((stage) => {
+                    return (
+                      <motion.div
+                        key={stage}
+                        className={classNames(
+                          "h-10 w-10 shadow-2xl grid place-items-center rounded-full cursor-pointer",
+                          stage == 0
+                            ? "mr-auto"
+                            : stage == 4
+                            ? "ml-auto"
+                            : "mx-auto",
+                          currentStage == stage
+                            ? "border-orange-300 text-white"
+                            : " border-2  text-black"
+                        )}
+                        animate={{
+                          backgroundColor:
+                            stage == currentStage
+                              ? ["rgb(255,255,255)", "rgb(253, 186, 116)"]
+                              : ["rgb(255, 255, 255)", "rgb(255,255,255)"],
+                        }}
+                        transition={{ duration: 0.5 }}
+                        onClick={() => setCurrentStage(stage)}
+                      >
+                        {stage + 1}
+                      </motion.div>
+                    );
                   })}
                 </div>
               </div>
@@ -198,7 +218,7 @@ export default function Home() {
             >
               <RiArrowRightSLine className="w-8 h-8" />
             </button>
-          {/* </div> */}
+          </div>
         </div>
       </main>
       {/* <Footer className="absolute" /> */}
