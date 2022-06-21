@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import LargePostStreamCard from "../components/LargePostStreamCard";
 import SmallPostStreamCard from "../components/SmallPostStreamCard";
+import Footer from "../components/Footer";
 
 const postStream = [
   {
@@ -49,6 +50,7 @@ export default function Home() {
   return (
     <div>
       <Header tab="Updates" />
+<<<<<<< Updated upstream
       <div className="flex items-center justify-center flex-col bg-[#001220] text-white">
         <div className="mt-8 mb-8 text-3xl">Latest News</div>
 
@@ -59,12 +61,23 @@ export default function Home() {
           {postStream.map((item) => (
             <SmallPostStreamCard
               key={postStream.indexOf(item)}
+=======
+      <div className="">
+        <div className="">
+          {dummyData.map((item) => (
+            <PostStreamCard
+              key={dummyData.indexOf(item)}
+>>>>>>> Stashed changes
               className="px-4 py-6 sm:px-0"
               data={item}
             />
           ))}
         </div>
       </div>
+<<<<<<< Updated upstream
+=======
+      <Footer />
+>>>>>>> Stashed changes
     </div>
   );
 }
