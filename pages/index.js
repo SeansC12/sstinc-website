@@ -136,6 +136,7 @@ export default function Home() {
                         scale: currentCourseIndex == i ? 1.3 : 1,
                         color: currentCourseIndex == i ? course.color : "#333",
                       }}
+                      whileHover={{color: course.color}}
                     >
                       {course.name}
                       {currentCourseIndex == i && (
