@@ -10,7 +10,7 @@ import "../public/reactLogo.svg";
 import "../public/swiftLogo.png";
 import "../public/homeWaves.svg";
 import Footer from "../components/Footer";
-import { motion } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion";
 import { useState } from "react";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 
@@ -18,23 +18,28 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-
 const courses = [
   {
     name: "ReactJS",
+    title: "Javascript",
     image: "reactLogo.svg",
+    color: "#ff0055",
     description:
       "ReactJS is a javascript library used to build incredible user experience focused web pages",
   },
   {
     name: "iOS",
+    title: "Swift",
     image: "swiftLogo.png",
+    color: "#0099ff",
     description:
       "iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad ",
   },
   {
     name: "Android",
+    title: "Java",
     image: "androidLogo.svg",
+    color: "#22cc88",
     description:
       "android is eh?android is eh?android is eh?android is eh?android is eh?android is eh?android is eh?",
   },
@@ -95,12 +100,19 @@ export default function Home() {
                   animate={{ scale: 1.4 }}
                   transition={{ delay: 0.1, type: "spring" }}
                 ></motion.img>
+                <p className="w-5/6 sm:w-1/2 p-10 text-center bg-slate-200 rounded-xl bg-opacity-80 font-mono font-semibold  sm:text-xl">
+                  SST Inc. is the technology Talent Development Programme in the
+                  School of Science and Technology, Singapore. SST Inc. is an
+                  incubator that nurtures student employees in running
+                  technology start-ups to serve communities and better our
+                  world.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="h-screen bg-gradient-to-b from-[#DC4267] to-[#DC4267] flex justify-center items-center relative -mt-14 font-sans">
+        <div className="h-screen bg-[#FA7268] flex justify-center items-center relative font-sans">
           <div className="grid place-items-center">
             <motion.h1
               whileInView={{ scale: 1.3 }}
@@ -110,13 +122,13 @@ export default function Home() {
               Our Courses
             </motion.h1>
 
-            <div className="flex text-center">
+            {/* <div className="flex justify-center my-10 text-center w-full">
               {courses.map((course) => {
                 let index = courses.indexOf(course);
                 return (
                   <motion.p
                     key={course.name}
-                    className={`m-10 w-20 text-2xl cursor-pointer`}
+                    className=" w-1/4 text-2xl cursor-pointer"
                     whileHover={{ scale: 1.1 }}
                     // animate={{font: currentCourseIndex == index ? "bold" : "normal"}}
                     animate={{
@@ -130,14 +142,46 @@ export default function Home() {
                   </motion.p>
                 );
               })}
-            </div>
+            </div> */}
+
+            <LayoutGroup>
+              <ol className="grid grid-cols-3 place-items-center w-full font-mono m-3">
+                {courses.map((course, i) => {
+                  return (
+                    <motion.li
+                      key={i}
+                      onClick={() => {
+                        setCurrentCourseIndex(i);
+                      }}
+                      className="text-center w-fit"
+                      animate={{
+                        scale: currentCourseIndex == i ? 1.3 : 1,
+                        color: currentCourseIndex == i ? course.color : "#333",
+                      }}
+                    >
+                      {course.name}
+                      {currentCourseIndex == i && (
+                        <motion.div
+                          className={`h-1 rounded-full w-10/12 m-auto`}
+                          style={{ backgroundColor: course.color }}
+                          layoutId="underline"
+                        ></motion.div>
+                      )}
+                    </motion.li>
+                  );
+                })}
+              </ol>
+            </LayoutGroup>
+
             <div className="grid place-items-center">
-              <h1 className="text-2xl">{courses[currentCourseIndex].name}</h1>
+              <h1 className="text-2xl -2">
+                {courses[currentCourseIndex].title}
+              </h1>
               <img
                 src={courses[currentCourseIndex].image}
-                className="h-96 p-10"
+                className="h-96 w-fit p-20"
               ></img>
-              <p className="text-xl font-source_code_pro sm:w-[40vw] text-center text-gray-300">
+              <p className="text-xl font-source_code_pro  text-center text-white mb-10">
                 {courses[currentCourseIndex].description}
               </p>
             </div>
@@ -145,30 +189,43 @@ export default function Home() {
         </div>
 
         <div className="bg-[#001220] h-screen items-center flex justify-center">
-          <div className="w-[60vw] h-[60vh] p-10  rounded-[30px] bg-white flex items-center justify-centre">
-            <button
-              onClick={() => {
-                // console.log(divDimension)
-                setCurrentStage((x) =>
-                  x == 0 ? (x = careerStages.length - 1) : x - 1
-                );
-              }}
-              className="p-2 bg-orange-300 rounded-full text-3xl text-center m-2 ml-5"
-            >
-              <RiArrowLeftSLine className="w-8 h-8" />
-            </button>
-
-            <div className="w-full text-center font-mono px-10 h-[80%]">
-              <div className="h-full">
-                <p className="text-3xl font-semibold text-[#DC4267]">
+          <div className="w-[90vw] lg:w-[60vw] h-fit lg:h-[70vh] rounded-[30px] bg-white flex items-center justify-centre">
+            <div className="w-full text-center font-mono h-[80%] mt-5 items-center">
+              <div className="h-full items-center sm:px-10">
+                <p className="text-xl sm:text-3xl font-semibold text-[#DC4267]">
                   {currentStage + 1}. {careerStages[currentStage].header}
                 </p>
-                <p className="text-2xl m-10">
-                  {careerStages[currentStage].subHeader}
+                <div className="text-xl sm:text-2xl p-2 sm:p-5 flex justify-center items-center w-full">
+                  <button
+                    onClick={() => {
+                      // console.log(divDimension)
+                      setCurrentStage((x) =>
+                        x == 0 ? (x = careerStages.length - 1) : x - 1
+                      );
+                    }}
+                    className="p-2 bg-orange-300 rounded-full text-3xl text-center m-2 mr-auto"
+                  >
+                    <RiArrowLeftSLine className="w-8 h-8" />
+                  </button>
+                  <p className="sm:mx-10 ">
+                    {careerStages[currentStage].subHeader}
+                  </p>
+                  <button
+                    onClick={() =>
+                      setCurrentStage((x) =>
+                        x == careerStages.length - 1 ? 0 : x + 1
+                      )
+                    }
+                    className="p-2 bg-orange-300 rounded-full text-3xl text-centre m-2 ml-auto"
+                  >
+                    <RiArrowRightSLine className="w-8 h-8" />
+                  </button>
+                </div>
+                <p className="text-sm sm:text-base px-2 sm:px-10">
+                  {careerStages[currentStage].description}
                 </p>
-                <p>{careerStages[currentStage].description}</p>
               </div>
-              <div className="h-fit w-full mb-0 flex justify-center items-center mt-10 relative">
+              <div className="h-12 w-11/12 mt-10 md:mt-0 flex justify-center items-center relative px-10 mx-auto pb-10">
                 <div className="shadow h-1 w-full">
                   <motion.div
                     className="bg-orange-300 h-1 w-[25%]"
@@ -183,15 +240,12 @@ export default function Home() {
                       <motion.div
                         key={stage}
                         className={classNames(
-                          "h-10 w-10 shadow-2xl grid place-items-center rounded-full cursor-pointer",
+                          "h-10 w-10 border-2 border-orange-300 text-black shadow-2xl grid place-items-center rounded-full cursor-pointer ",
                           stage == 0
                             ? "mr-auto"
                             : stage == 4
                             ? "ml-auto"
-                            : "mx-auto",
-                          currentStage >= stage
-                            ? "border-orange-300 text-white"
-                            : " border-2  text-black"
+                            : "mx-auto"
                         )}
                         animate={{
                           backgroundColor:
@@ -209,20 +263,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <button
-              onClick={() =>
-                setCurrentStage((x) =>
-                  x == careerStages.length - 1 ? 0 : x + 1
-                )
-              }
-              className="p-2 bg-orange-300 rounded-full text-3xl text-centre m-2 mr-5"
-            >
-              <RiArrowRightSLine className="w-8 h-8" />
-            </button>
           </div>
         </div>
       </main>
-      {/* <Footer className="absolute" /> */}
+      <Footer className="absolute" />
     </div>
   );
 }
