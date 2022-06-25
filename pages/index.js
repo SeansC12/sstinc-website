@@ -23,7 +23,7 @@ const courses = [
     name: "ReactJS",
     title: "Javascript",
     image: "reactLogo.svg",
-    color: "#ff0055",
+    color: "#61DAFB",
     description:
       "ReactJS is a javascript library used to build incredible user experience focused web pages",
   },
@@ -31,7 +31,7 @@ const courses = [
     name: "iOS",
     title: "Swift",
     image: "swiftLogo.png",
-    color: "#0099ff",
+    color: "#D12E13",
     description:
       "iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad ",
   },
@@ -39,7 +39,7 @@ const courses = [
     name: "Android",
     title: "Java",
     image: "androidLogo.svg",
-    color: "#22cc88",
+    color: "#A4C639",
     description:
       "android is eh?android is eh?android is eh?android is eh?android is eh?android is eh?android is eh?",
   },
@@ -50,7 +50,7 @@ const careerStages = [
     header: "Trainee",
     subHeader: "ReactJS, iOS, and Android Development",
     description:
-      "In Secondary 1, all students may sign up to join SST Inc. as a trainee. They will undergo training in Swift and develop iOS apps using Xcode. Students will also undergo training for React Native, to be able to develop iOS and Android apps. The trainees are expected to apply their learning at the end of the course by developing an app.",
+      "Trainees will undergo a vigorous training of UI development to make great visual elements for their apps to suit differ users and their functionality. They will also learn to code in Androids apps so that they will be able to release both IOS and Android apps which will cater to all mobile phone users. This will mark the end of their time as a trainee as they prepare to face the real world",
   },
   {
     header: "Associate Employee Startup Incubation",
@@ -112,40 +112,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="h-screen bg-[#FA7268] flex justify-center items-center relative font-sans">
+        <div className="h-screen bg-[#FA7268] flex justify-center items-center relative font-mono">
           <div className="grid place-items-center">
             <motion.h1
               whileInView={{ scale: 1.3 }}
               transition={{ duration: 0.5 }}
               className="w-fit text-4xl text-gray-100"
             >
-              Our Courses
+              Course Options
             </motion.h1>
 
-            {/* <div className="flex justify-center my-10 text-center w-full">
-              {courses.map((course) => {
-                let index = courses.indexOf(course);
-                return (
-                  <motion.p
-                    key={course.name}
-                    className=" w-1/4 text-2xl cursor-pointer"
-                    whileHover={{ scale: 1.1 }}
-                    // animate={{font: currentCourseIndex == index ? "bold" : "normal"}}
-                    animate={{
-                      fontWeight:
-                        currentCourseIndex == index ? "bold" : "normal",
-                      scale: currentCourseIndex == index ? 1.1 : 1,
-                    }}
-                    onClick={() => setCurrentCourseIndex(index)}
-                  >
-                    {course.name}
-                  </motion.p>
-                );
-              })}
-            </div> */}
-
             <LayoutGroup>
-              <ol className="grid grid-cols-3 place-items-center w-full font-mono m-3">
+              <ol className="grid grid-cols-3 place-items-center w-full font-mono m-5 my-10 sm:w-1/2">
                 {courses.map((course, i) => {
                   return (
                     <motion.li
@@ -153,7 +131,7 @@ export default function Home() {
                       onClick={() => {
                         setCurrentCourseIndex(i);
                       }}
-                      className="text-center w-fit"
+                      className="text-center w-fit cursor-pointer"
                       animate={{
                         scale: currentCourseIndex == i ? 1.3 : 1,
                         color: currentCourseIndex == i ? course.color : "#333",
@@ -181,7 +159,7 @@ export default function Home() {
                 src={courses[currentCourseIndex].image}
                 className="h-96 w-fit p-20"
               ></img>
-              <p className="text-xl font-source_code_pro  text-center text-white mb-10">
+              <p className="text-xl font-mono  text-center text-white mb-10">
                 {courses[currentCourseIndex].description}
               </p>
             </div>
@@ -252,6 +230,7 @@ export default function Home() {
                             stage <= currentStage
                               ? ["rgb(255,255,255)", "rgb(253, 186, 116)"]
                               : ["rgb(255, 255, 255)", "rgb(255,255,255)"],
+                          color: stage <= currentStage ? "#fff" : "#696969",
                         }}
                         transition={{ duration: 0.5 }}
                         onClick={() => setCurrentStage(stage)}
