@@ -131,7 +131,7 @@ export default function Home() {
                       onClick={() => {
                         setCurrentCourseIndex(i);
                       }}
-                      className="text-center w-fit cursor-pointer"
+                      className="text-center text-xl w-fit cursor-pointer"
                       animate={{
                         scale: currentCourseIndex == i ? 1.3 : 1,
                         color: currentCourseIndex == i ? course.color : "#333",
