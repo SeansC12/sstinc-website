@@ -117,7 +117,7 @@ export default function Home() {
             <motion.h1
               whileInView={{ scale: 1.3 }}
               transition={{ duration: 0.5 }}
-              className="w-fit mt-10 text-xl sm:text-3xl text-gray-100"
+              className="w-fit mt-10 text-xl sm:text-3xl text-gray-100 font-lato"
             >
               Course Options
             </motion.h1>

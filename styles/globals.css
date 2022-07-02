@@ -15,4 +15,8 @@
     font-family: "Roboto";
     src: url("/fonts/Roboto-Bold") format("woff2");
   }
+  @font-face {
+    font-family: "Lato";
+    src: url("../public/fonts/Lato/Lato-Regular.ttf") format("ttf");
+  }
 }
