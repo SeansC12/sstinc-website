@@ -11,15 +11,15 @@ const navigation = [
     current: false,
   },
   {
-    name: "Past Projects",
-    href: "/PastProjects",
-    heading: "Past Projects",
+    name: "Our Projects",
+    href: "/OurProjects",
+    heading: "Our Projects",
     current: false,
   },
   {
-    name: "About Us",
-    href: "/AboutUs",
-    heading: "About Us",
+    name: "The Team",
+    href: "/TheTeam",
+    heading: "The Team",
     current: false,
   },
   {
@@ -66,7 +66,6 @@ export default function Header({ tab }) {
                 </Link>
               </div>
               <div className="hidden sm:flex items-center py-2 px-2">
-                {/* <div className="w-full h-full"> */}
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -97,7 +96,7 @@ export default function Header({ tab }) {
                 </Disclosure.Button>
               </div>
             </div>
-            <div className="">
+            <div>
               <Disclosure.Panel className="sm:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   {navigation.map((item) => (

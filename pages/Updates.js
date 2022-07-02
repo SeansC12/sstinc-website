@@ -46,7 +46,7 @@ const latestNews = {
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Header tab="Updates" />
       <div className="flex items-center justify-center flex-col bg-[#001220] text-white pb-28">
         <div className="mt-8 mb-8 text-3xl">Latest News</div>
