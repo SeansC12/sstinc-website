@@ -2,6 +2,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LargePostStreamCard from "../components/LargePostStreamCard";
 import SmallPostStreamCard from "../components/SmallPostStreamCard";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient("https://oegrlpmdgtysbebxhyue.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9lZ3JscG1kZ3R5c2JlYnhoeXVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTYzODYwODQsImV4cCI6MTk3MTk2MjA4NH0.3qjo3vnnJt3pTIZggw16RfUF5ZKUNmLdjZJHtxyIiuU", {
+  fetch: fetch.bind(globalThis)
+})
 
 const postStream = [
   {

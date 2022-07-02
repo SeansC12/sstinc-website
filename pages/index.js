@@ -86,16 +86,16 @@ export default function Home() {
     <div>
       <Header tab="Home" />
       <main>
-        <div>
-          <img
+        <div className="h-fit sm:h-screen bg-[url(../public/homeWaves.svg)] bg-cover">
+          {/* <img
             src="homeWaves.svg"
-            className="w-full h-screen object-cover absolute"
-          />
+            className="w-full h-full object-cover absolute"
+          /> */}
           <div className="relative">
-            <div className="items-center h-screen pb-20 flex justify-center">
+            <div className="items-center h-fit pb-20 flex justify-center">
               <div className=" h-fit grid place-items-center space-y-0">
                 <motion.img
-                  className="h-40 mb-10"
+                  className="h-40 m-10"
                   src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
                   animate={{ scale: 1.4 }}
                   transition={{ delay: 0.1, type: "spring" }}
@@ -112,12 +112,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="h-screen bg-[#FA7268] flex justify-center items-center relative font-mono">
+        <div className="h-fit bg-[#FA7268] flex justify-center items-center relative font-mono">
           <div className="grid place-items-center">
             <motion.h1
               whileInView={{ scale: 1.3 }}
               transition={{ duration: 0.5 }}
-              className="w-fit text-4xl text-gray-100"
+              className="w-fit mt-10 text-xl sm:text-3xl text-gray-100"
             >
               Course Options
             </motion.h1>
@@ -131,12 +131,12 @@ export default function Home() {
                       onClick={() => {
                         setCurrentCourseIndex(i);
                       }}
-                      className="text-center text-xl w-fit cursor-pointer"
+                      className="text-center sm:text-xl w-fit cursor-pointer text-[5vw]"
                       animate={{
                         scale: currentCourseIndex == i ? 1.3 : 1,
                         color: currentCourseIndex == i ? course.color : "#333",
                       }}
-                      whileHover={{color: course.color}}
+                      whileHover={{ color: course.color }}
                     >
                       {course.name}
                       {currentCourseIndex == i && (
@@ -158,9 +158,9 @@ export default function Home() {
               </h1>
               <img
                 src={courses[currentCourseIndex].image}
-                className="h-96 w-fit p-20"
+                className="h-96 w-fit sm:p-20"
               ></img>
-              <p className="text-xl font-mono  text-center text-white mb-10">
+              <p className="text-xl font-mono w-11/12 md:w-1/2 text-center text-white mb-10">
                 {courses[currentCourseIndex].description}
               </p>
             </div>
@@ -168,10 +168,10 @@ export default function Home() {
         </div>
 
         <div className="bg-[#001220] h-screen items-center flex justify-center">
-          <div className="w-[90vw] lg:w-[60vw] h-fit lg:h-[70vh] rounded-[30px] bg-white flex items-center justify-centre">
-            <div className="w-full text-center font-mono h-[80%] mt-5 items-center">
-              <div className="h-full items-center sm:px-10">
-                <p className="text-xl sm:text-3xl font-semibold text-[#DC4267]">
+          <div className="w-[90vw] lg:w-[60vw] h-[70vh] rounded-[30px] bg-white flex items-center justify-centre">
+            <div className="w-full text-center font-mono h-[80%]  items-center">
+              <div className="h-full items-center sm:pt-5">
+                <p className="text-xl md:text-3xl font-semibold text-[#DC4267]">
                   {currentStage + 1}. {careerStages[currentStage].header}
                 </p>
                 <div className="text-xl sm:text-2xl p-2 sm:p-5 flex justify-center items-center w-full">
@@ -186,7 +186,7 @@ export default function Home() {
                   >
                     <RiArrowLeftSLine className="w-8 h-8" />
                   </button>
-                  <p className="sm:mx-10 ">
+                  <p className="sm:mx-10">
                     {careerStages[currentStage].subHeader}
                   </p>
                   <button
@@ -200,11 +200,15 @@ export default function Home() {
                     <RiArrowRightSLine className="w-8 h-8" />
                   </button>
                 </div>
-                <p className="text-sm sm:text-base px-2 sm:px-10">
+                <p
+                  className="text-[] md:text-base px-2 sm:px-10"
+                  // style={{ fontSize: "calc(1vh + 1vw)" }}
+                  // style={{fontSize: "100%"}}
+                >
                   {careerStages[currentStage].description}
                 </p>
               </div>
-              <div className="h-12 w-11/12 mt-10 md:mt-0 flex justify-center items-center relative px-10 mx-auto pb-10">
+              <div className="h-12 w-11/12 md:mt-0 flex justify-center items-center relative px-10 mx-auto pb-10">
                 <div className="shadow h-1 w-full">
                   <motion.div
                     className="bg-orange-300 h-1 w-[25%]"
