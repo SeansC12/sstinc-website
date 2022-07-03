@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import Project from "../components/Project";
 import Footer from "../components/Footer";
 import getWindowDimensions from "../hooks/getWindowDimensions";
+import info from "../public/info.json"
+
+const projects = info.OurProjects
 
 function PastProjects() {
   const gradientColourScheme =
@@ -16,50 +19,6 @@ function PastProjects() {
   let [reactUnderline, setReactUnderline] = useState(false);
   const reactRef = useRef();
 
-  const projects = {
-    iOS: {
-      ClickerApp: {
-        name: "Clicker App",
-        description: "An app that clicks",
-        team: "Aurelius Yeo",
-        imageLink: "https://picsum.photos/200",
-      },
-      ClickerApp2: {
-        name: "Clicker App2",
-        description: "An app that clicks 2",
-        team: "Aurelius Yeo",
-        imageLink: "https://picsum.photos/200",
-      },
-    },
-    Android: {
-      YouTube: {
-        name: "Youtube",
-        description: "Watch vids",
-        team: "Aurelius Yeo",
-        imageLink: "https://picsum.photos/200",
-      },
-      YouTube2: {
-        name: "Youtube2",
-        description: "Watch vids 2",
-        team: "Aurelius Yeo",
-        imageLink: "https://picsum.photos/200",
-      },
-    },
-    React: {
-      Website: {
-        name: "Website",
-        description: "Found on the web",
-        team: "Aurelius Yeo",
-        imageLink: "https://picsum.photos/200",
-      },
-      Website2: {
-        name: "Website2",
-        description: "Found on the web2",
-        team: "Aurelius Yeo",
-        imageLink: "https://picsum.photos/200",
-      },
-    },
-  };
 
   const iosProjectComponents = [];
   const androidProjectComponents = [];

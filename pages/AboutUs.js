@@ -7,7 +7,7 @@ import Person from "../components/Person";
 import Footer from "../components/Footer";
 import info from "../public/info.json"
 
-const DreamTeam = info.DreamTeam;
+const DreamTeam = info.AboutUs.DreamTeam;
 
 const indivTeamElement = [];
 for (const division in DreamTeam) {
