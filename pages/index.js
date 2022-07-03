@@ -93,7 +93,7 @@ export default function Home() {
           /> */}
           <div className="relative">
             <div className="items-center h-fit pb-20 flex justify-center">
-              <div className=" h-fit grid place-items-center space-y-0">
+              <div className="md:mt-20 h-fit grid place-items-center space-y-0">
                 <motion.img
                   className="h-40 m-10"
                   src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
@@ -152,15 +152,15 @@ export default function Home() {
               </ol>
             </LayoutGroup>
 
-            <div className="grid place-items-center font-mono">
-              <h1 className="text-2xl -2">
+            <div className="w-full font-mono text-center">
+              <p className="text-2xl mx-auto">
                 {courses[currentCourseIndex].title}
-              </h1>
+              </p>
               <img
                 src={courses[currentCourseIndex].image}
-                className="h-96 w-fit sm:p-20"
+                className="h-[30vh] mx-auto m-10"
               ></img>
-              <p className="text-xl font-mono w-11/12 md:w-1/2 text-center text-white mb-10">
+              <p className="text-xl w-11/12 md:w-1/2 text-center text-white mb-28 mx-auto">
                 {courses[currentCourseIndex].description}
               </p>
             </div>
