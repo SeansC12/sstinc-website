@@ -123,7 +123,7 @@ export default function Home() {
             </motion.h1>
 
             <LayoutGroup>
-              <ol className="grid grid-cols-3 place-items-center w-full font-mono m-5 my-10 sm:w-1/2">
+              <ol className="grid grid-cols-3 place-items-center w-full font-lato m-5 my-10 sm:w-1/2">
                 {courses.map((course, i) => {
                   return (
                     <motion.li
@@ -152,7 +152,7 @@ export default function Home() {
               </ol>
             </LayoutGroup>
 
-            <div className="grid place-items-center">
+            <div className="grid place-items-center font-mono">
               <h1 className="text-2xl -2">
                 {courses[currentCourseIndex].title}
               </h1>
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#001220] h-screen items-center flex justify-center">
+        {/* <div className="bg-[#001220] h-screen items-center flex justify-center">
           <div className="w-[90vw] lg:w-[60vw] h-[70vh] rounded-[30px] bg-white flex items-center justify-centre">
             <div className="w-full text-center font-mono h-[80%]  items-center">
               <div className="h-full items-center sm:pt-5">
@@ -245,6 +245,79 @@ export default function Home() {
                     );
                   })}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+
+        {/* career stages part */}
+        <div className="w-full bg-[#001220] flex justify-center">
+          <div className="text-center h-fit py-10 sm:py-28 lg:py-36 w-11/12 md:w-1/2 grid">
+            <p className="text-[#DC4267] font-bold font-mono text-3xl">
+              {currentStage + 1}. {careerStages[currentStage].header}
+            </p>
+            <div className="flex justify-center w-full">
+              <button
+                onClick={() => {
+                  // console.log(divDimension)
+                  setCurrentStage((x) =>
+                    x == 0 ? (x = careerStages.length - 1) : x - 1
+                  );
+                }}
+              >
+                <RiArrowLeftSLine className="bg-orange-300 h-10 w-10 rounded-full text-3xl text-white" />
+              </button>
+              <p className="text-white text-2xl font-lato py-10 px-2 sm:p-10">
+                {careerStages[currentStage].subHeader}
+              </p>
+              <button
+                onClick={() =>
+                  setCurrentStage((x) =>
+                    x == careerStages.length - 1 ? 0 : x + 1
+                  )
+                }
+              >
+                <RiArrowRightSLine className="bg-orange-300 h-10 w-10 rounded-full text-3xl text-white" />
+              </button>
+            </div>
+            <p className="text-white font-mono text-sm sm:text-base">
+              {careerStages[currentStage].description}
+            </p>
+
+            {/* animated progress bar thing */}
+            <div className="h-12 w-11/12 mt-10 flex justify-center items-center relative px-10 mx-auto pb-10">
+              <div className="shadow-xl h-1 w-full bg-gray-200">
+                <motion.div
+                  className="bg-orange-300 h-1 w-[25%]"
+                  animate={{ scaleX: currentStage, originX: 0 }}
+                  initial={{ scaleX: 0 }}
+                  transition={{ duration: 0.5 }}
+                ></motion.div>
+              </div>
+              <div className="flex absolute w-full justify-center">
+                {careerStages.map((info, stage) => {
+                  return (
+                    <motion.div
+                      key={stage}
+                      className="h-10 w-10 border-2 border-orange-300 text-black shadow-2xl grid place-items-center rounded-full cursor-pointer "
+                      style={{
+                        marginRight: stage != careerStages.length - 1 && "auto",
+                        marginLeft: stage != 0 && "auto",
+                      }}
+                      animate={{
+                        backgroundColor:
+                          stage <= currentStage
+                            ? ["rgb(255,255,255)", "rgb(253, 186, 116)"]
+                            : ["rgb(253, 186, 116)", "rgb(255,255,255)"],
+                        color: stage <= currentStage ? "#fff" : "#696969",
+                      }}
+                      transition={{ duration: 0.5 }}
+                      onClick={() => setCurrentStage(stage)}
+                    >
+                      {stage + 1}
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </div>
