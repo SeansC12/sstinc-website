@@ -5,93 +5,9 @@ import getWindowDimensions from "../hooks/getWindowDimensions";
 import Image from "next/image";
 import Person from "../components/Person";
 import Footer from "../components/Footer";
+import info from "../public/info.json"
 
-const DreamTeam = {
-  EXCO: {
-    XuanHan: {
-      name: "Tan Xuan Han",
-      position: "President",
-      imageURL: "",
-    },
-    Asher: {
-      name: "Asher",
-      position: "Vice-President",
-      imageURL: "",
-    },
-    Kai: {
-      name: "Tay Kai Quan",
-      position: "iOS CTO",
-      imageURL: "",
-    },
-    Luke: {
-      name: "Luke Yeo",
-      position: "iOS ACTO",
-      imageURL: "",
-    },
-    Lohith: {
-      name: "Lohith",
-      position: "iOS Task Force",
-      imageURL: "",
-    },
-    EnJie: {
-      name: "Tham En Jie",
-      position: "iOS Task Force",
-      imageURL: "",
-    },
-    Harish: {
-      name: "Harish",
-      position: "React CTO",
-      imageURL: "",
-    },
-    Sean: {
-      name: "Sean Ulric Chua",
-      position: "React ACTO",
-      imageURL: "",
-    },
-    Sairam: {
-      name: "Sairam Suresh",
-      position: "React Task Force",
-      imageURL: "",
-    },
-    Aathithya: {
-      name: "Aathithya Jagatheesan",
-      position: "CMO",
-      imageURL: "",
-    },
-    Ayaan: {
-      name: "Ayaan Jain",
-      position: "CAO",
-      imageURL: "",
-    },
-    Daksh: {
-      name: "Daksh Thapar",
-      position: "ACAO",
-      imageURL: "",
-    },
-  },
-  BOD: {
-    LordYeo: {
-      name: "Aurelius Yeo",
-      position: "Board of Director",
-      imageURL: "",
-    },
-    MsTang: {
-      name: "Jovita Tang",
-      position: "Board of Director",
-      imageURL: "",
-    },
-    Chuaism: {
-      name: "Jonathan Chua",
-      position: "Board of Director",
-      imageURL: "",
-    },
-    Roger: {
-      name: "Roger Yeo",
-      position: "Board of Director",
-      imageURL: "",
-    },
-  },
-};
+const DreamTeam = info.DreamTeam;
 
 const indivTeamElement = [];
 for (const division in DreamTeam) {
@@ -208,7 +124,7 @@ export default function AboutUs() {
         <h1 className="text-5xl mt-24 mb-5 font-mono font-semibold">
           Board of Directors
         </h1>
-        <div className="grid lg:grid-cols-4 m-10">
+        <div className="grid lg:grid-cols-4 m-10 mb-20">
           {indivTeamElement.slice(12, 17).map((personElement, key) => {
             return <div key={key}>{personElement}</div>;
           })}
