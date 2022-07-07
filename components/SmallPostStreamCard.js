@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import useOutsideClickAlerter from "../hooks/useOutsideClickAlerter";
 
 function SmallPostStreamCard({ data }) {
   let [isMouseHoveringOnCard, setIsMouseHoveringOnCard] = useState();
+  let [isMouseClicked, setIsMouseClicked] = useState(false);
+  const descriptionRef = useRef();
+
+  useOutsideClickAlerter(() => {
+    setIsMouseClicked(false);
+    setIsMouseHoveringOnCard(false);
+  }, descriptionRef);
 
   const postStreamCardVariants = {
     mouseHovering: {
@@ -39,12 +47,17 @@ function SmallPostStreamCard({ data }) {
         setIsMouseHoveringOnCard(true);
       }}
       onMouseLeave={() => {
-        setIsMouseHoveringOnCard(false);
+        if (!isMouseClicked) setIsMouseHoveringOnCard(false);
+      }}
+      onClick={() => {
+        setIsMouseClicked(true);
+        setIsMouseHoveringOnCard(true);
       }}
       variants={postStreamCardVariants}
-      className="relative h-[350px] sm:h-full max-w-[432px] max-h-[474px] border border-white rounded-xl overflow-hidden cursor-pointer"
+      ref={descriptionRef}
+      className="relative sm:h-full max-w-[432px] max-h-[474px] border border-white rounded-xl overflow-hidden cursor-pointer"
     >
-      <div className="shrink-0 overflow-hidden">
+      <div className="shrink-0">
         <motion.img
           animate={isMouseHoveringOnCard ? "mouseHovering" : "mouseNotHovering"}
           variants={imageVariants}
@@ -52,17 +65,53 @@ function SmallPostStreamCard({ data }) {
           src={data.image}
           alt="Never gonna give you up"
         />
-      </div>
-      <div className="relative flex flex-col justify-center items-start py-6 px-7">
-        <div className="uppercase tracking-wide text-sm text-slate-300 font-medium">
-          {data.genre}
-        </div>
-        <p className="mt-2 text-white text-lg sm:text-2xl font-semibold">
-          {data.title}
-        </p>
-        <div className="absolute top-[159px] uppercase tracking-wide text-sm text-slate-300 font-medium">
-          {data.date}
-        </div>
+        {isMouseClicked ? (
+          <AnimatePresence>
+            <motion.div
+              key="title"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 0.8, delay: 0.7 },
+              }}
+              exit={{ opacity: 0, transition: { duration: 0.8 } }}
+              className="relative flex flex-col justify-center items-start py-6 px-7"
+            >
+              <div className="uppercase tracking-wide text-sm text-slate-300 font-medium">
+                {data.genre}
+              </div>
+              <p className="mt-2 text-white text-lg sm:text-2xl font-semibold">
+                {data.description}
+              </p>
+              <div className="absolute top-[159px] uppercase tracking-wide text-sm text-slate-300 font-medium">
+                {data.date}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        ) : (
+          <AnimatePresence>
+            <motion.div
+              key="title"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 0.8, delay: 0.7 },
+              }}
+              exit={{ opacity: 0, transition: { duration: 0.8 } }}
+              className="relative flex flex-col justify-center items-start py-6 px-7"
+            >
+              <div className="uppercase tracking-wide text-sm text-slate-300 font-medium">
+                {data.genre}
+              </div>
+              <p className="mt-2 text-white text-lg sm:text-2xl font-semibold">
+                {data.title}
+              </p>
+              <div className="absolute top-[159px] uppercase tracking-wide text-sm text-slate-300 font-medium">
+                {data.date}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        )}
       </div>
     </motion.div>
   );
