@@ -8,7 +8,7 @@ import info from "../public/info.json"
 
 const projects = info.OurProjects
 
-function PastProjects() {
+function OurProjects() {
   const gradientColourScheme =
     "bg-gradient-to-r from-[#0d81fe] via-[#0bc3f0] to-[#00f9e2]";
 
@@ -106,19 +106,6 @@ function PastProjects() {
     });
   };
 
-  // if (getWindowDimensions().width < 640) {
-  //   setUnderline(<div className="border border-white" />);
-  // } else {
-  //   setUnderline(
-  //     <motion.div
-  //       className="border border-white"
-  //       initial={false}
-  //       animate={androidUnderline ? "visible" : "hidden"}
-  //       variants={underlineVariants}
-  //     />
-  //   );
-  // }
-
   let [underline, setUnderline] = useState(
     getWindowDimensions().width <= 640 ? (
       <div className="border border-white" />
@@ -134,7 +121,7 @@ function PastProjects() {
 
   return (
     <div className="bg-[#001220] text-white">
-      <Header tab={"Past Projects"} />
+      <Header tab={"Our Projects"} />
       <div
         className={`bg-[#0d81fe] h-[60vh] w-full flex flex-col items-center justify-center text-white z-0 relative`}
       >
@@ -169,13 +156,6 @@ function PastProjects() {
                     />
                   )}
                 </div>
-                {/* <motion.div
-                  className="border border-white"
-                  initial={false}
-                  animate={iosUnderline ? "visible" : "hidden"}
-                  variants={underlineVariants}
-                /> */}
-                {/* <div>{underline}</div> */}
               </motion.div>
               <div className="hidden sm:col-start-2 sm:col-end-3 sm:flex sm:justify-center sm:font-thin">
                 /
@@ -208,12 +188,6 @@ function PastProjects() {
                     />
                   )}
                 </div>
-                {/* <motion.div
-                  className="border border-white"
-                  initial={false}
-                  animate={androidUnderline ? "visible" : "hidden"}
-                  variants={underlineVariants}
-                /> */}
               </motion.div>
               <div className="hidden sm:col-start-4 sm:col-end-5 sm:flex sm:justify-center sm:font-thin">
                 /
@@ -322,4 +296,4 @@ function PastProjects() {
   );
 }
 
-export default PastProjects;
+export default OurProjects;

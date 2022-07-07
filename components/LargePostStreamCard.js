@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import useOutsideClickAlerter from "../hooks/useOutsideClickAlerter";
 
 function LargePostStreamCard({ data }) {
   let [isMouseHoveringOnCard, setIsMouseHoveringOnCard] = useState();
+  let [isMouseClicked, setIsMouseClicked] = useState(false);
+  const descriptionRef = useRef();
+
+  useOutsideClickAlerter(() => {
+    setIsMouseClicked(false);
+    setIsMouseHoveringOnCard(false);
+  }, descriptionRef);
 
   const postStreamCardVariants = {
     mouseHovering: {
@@ -39,9 +47,14 @@ function LargePostStreamCard({ data }) {
         setIsMouseHoveringOnCard(true);
       }}
       onMouseLeave={() => {
-        setIsMouseHoveringOnCard(false);
+        if (!isMouseClicked) setIsMouseHoveringOnCard(false);
+      }}
+      onClick={() => {
+        setIsMouseClicked(true);
+        setIsMouseHoveringOnCard(true);
       }}
       variants={postStreamCardVariants}
+      ref={descriptionRef}
       className="inline-block relative w-full h-[468px] border border-white text-white rounded-xl overflow-hidden cursor-pointer"
     >
       <div className="shrink-0 overflow-hidden">
@@ -53,15 +66,47 @@ function LargePostStreamCard({ data }) {
           alt="Never gonna give you up"
         />
       </div>
-      <div className="w-full h-full flex flex-col items-start justify-end absolute py-12 px-7 z-10">
-        <div className="uppercase tracking-wide text-sm font-medium">
-          {data.genre}
-        </div>
-        <p className="mt-2 text-lg sm:text-2xl font-semibold">{data.title}</p>
-        <div className="absolute top-[430px] uppercase tracking-wide text-sm font-medium">
-          {data.date}
-        </div>
-      </div>
+      {isMouseClicked ? (
+        <AnimatePresence>
+          <motion.div
+            key="description"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { duration: 0.8 },
+            }}
+            exit={{ opacity: 0, transition: { duration: 0.8 } }}
+            className="h-full relative flex items-center justify-center"
+          >
+            <div className="text-center text-lg sm:text-2xl font-semibold py-12 px-7">
+              {data.description}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      ) : (
+        <AnimatePresence>
+          <motion.div
+            key="title"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.7 },
+            }}
+            exit={{ opacity: 0, transition: { duration: 0.8 } }}
+            className="w-full h-full flex flex-col items-start justify-end absolute py-12 px-7 z-10"
+          >
+            <div className="uppercase tracking-wide text-sm font-medium">
+              {data.genre}
+            </div>
+            <p className="mt-2 text-lg sm:text-2xl font-semibold">
+              {data.title}
+            </p>
+            <div className="absolute top-[430px] uppercase tracking-wide text-sm font-medium">
+              {data.date}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      )}
     </motion.div>
   );
 }
