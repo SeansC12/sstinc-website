@@ -58,13 +58,17 @@ function SmallPostStreamCard({ data }) {
       className="relative sm:h-full max-w-[432px] max-h-[474px] border border-white rounded-xl overflow-hidden cursor-pointer"
     >
       <div className="shrink-0">
-        <motion.img
-          animate={isMouseHoveringOnCard ? "mouseHovering" : "mouseNotHovering"}
-          variants={imageVariants}
-          className="h-[150px] sm:h-[266px] w-full object-cover"
-          src={data.image}
-          alt="Never gonna give you up"
-        />
+        <div className="overflow-hidden">
+          <motion.img
+            animate={
+              isMouseHoveringOnCard ? "mouseHovering" : "mouseNotHovering"
+            }
+            variants={imageVariants}
+            className="h-[150px] sm:h-[266px] w-full object-cover"
+            src={data.image}
+            alt="Never gonna give you up"
+          />
+        </div>
 
         <div className="relative flex flex-col justify-center items-start py-6 px-7">
           <div className="uppercase tracking-wide text-sm text-slate-300 font-medium">
