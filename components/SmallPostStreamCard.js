@@ -81,9 +81,9 @@ function SmallPostStreamCard({ data }) {
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
-                  transition: { duration: 0.8, delay: 0.7 },
+                  transition: { duration: 0.5, delay: 0.7 },
                 }}
-                exit={{ opacity: 0, transition: { duration: 0.8 } }}
+                exit={{ opacity: 0, transition: { duration: 0.5 } }}
                 className="mt-2 text-white text-lg sm:text-2xl font-semibold"
               >
                 {data.description}
@@ -96,9 +96,9 @@ function SmallPostStreamCard({ data }) {
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
-                  transition: { duration: 0.8, delay: 0.7 },
+                  transition: { duration: 0.5, delay: 0.7 },
                 }}
-                exit={{ opacity: 0, transition: { duration: 0.8 } }}
+                exit={{ opacity: 0, transition: { duration: 0.5 } }}
                 className="mt-2 text-white text-lg sm:text-2xl font-semibold"
               >
                 {data.title}
