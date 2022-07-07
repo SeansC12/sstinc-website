@@ -267,7 +267,7 @@ export default function Home() {
               >
                 <RiArrowLeftSLine className="bg-orange-300 h-10 w-10 rounded-full text-3xl text-white" />
               </button>
-              <p className="text-white text-2xl font-lato py-10 px-2 sm:p-10">
+              <p className="text-white text-2xl font-lato py-10 px-4 sm:p-10">
                 {careerStages[currentStage].subHeader}
               </p>
               <button
