@@ -65,53 +65,46 @@ function SmallPostStreamCard({ data }) {
           src={data.image}
           alt="Never gonna give you up"
         />
-        {isMouseClicked ? (
-          <AnimatePresence>
-            <motion.div
-              key="title"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: { duration: 0.8, delay: 0.7 },
-              }}
-              exit={{ opacity: 0, transition: { duration: 0.8 } }}
-              className="relative flex flex-col justify-center items-start py-6 px-7"
-            >
-              <div className="uppercase tracking-wide text-sm text-slate-300 font-medium">
-                {data.genre}
-              </div>
-              <p className="mt-2 text-white text-lg sm:text-2xl font-semibold">
+
+        <div className="relative flex flex-col justify-center items-start py-6 px-7">
+          <div className="uppercase tracking-wide text-sm text-slate-300 font-medium">
+            {data.genre}
+          </div>
+          {isMouseClicked ? (
+            <AnimatePresence>
+              <motion.p
+                key="description"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.8, delay: 0.7 },
+                }}
+                exit={{ opacity: 0, transition: { duration: 0.8 } }}
+                className="mt-2 text-white text-lg sm:text-2xl font-semibold"
+              >
                 {data.description}
-              </p>
-              <div className="absolute top-[159px] uppercase tracking-wide text-sm text-slate-300 font-medium">
-                {data.date}
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        ) : (
-          <AnimatePresence>
-            <motion.div
-              key="title"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: { duration: 0.8, delay: 0.7 },
-              }}
-              exit={{ opacity: 0, transition: { duration: 0.8 } }}
-              className="relative flex flex-col justify-center items-start py-6 px-7"
-            >
-              <div className="uppercase tracking-wide text-sm text-slate-300 font-medium">
-                {data.genre}
-              </div>
-              <p className="mt-2 text-white text-lg sm:text-2xl font-semibold">
+              </motion.p>
+            </AnimatePresence>
+          ) : (
+            <AnimatePresence>
+              <motion.p
+                key="title"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.8, delay: 0.7 },
+                }}
+                exit={{ opacity: 0, transition: { duration: 0.8 } }}
+                className="mt-2 text-white text-lg sm:text-2xl font-semibold"
+              >
                 {data.title}
-              </p>
-              <div className="absolute top-[159px] uppercase tracking-wide text-sm text-slate-300 font-medium">
-                {data.date}
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        )}
+              </motion.p>
+            </AnimatePresence>
+          )}
+          <div className="absolute top-[159px] uppercase tracking-wide text-sm text-slate-300 font-medium">
+            {data.date}
+          </div>
+        </div>
       </div>
     </motion.div>
   );
