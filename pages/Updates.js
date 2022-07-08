@@ -4,7 +4,6 @@ import LargePostStreamCard from "../components/LargePostStreamCard";
 import SmallPostStreamCard from "../components/SmallPostStreamCard";
 import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import Loader from "../components/Loader";
 
 const supabase = createClient(
@@ -14,13 +13,7 @@ const supabase = createClient(
     fetch: fetch.bind(globalThis),
   }
 );
-var data = 0;
-const getData = async () => {
-  console.log("getting data");
-  data = await supabase.from("updates").select("*");
-  console.log(data)
-  return data.body
-};
+
 
 const postStream = [
   {
@@ -72,22 +65,37 @@ const latestNews = {
   date: "28 June, 2022",
 };
 
-export default function Home() {
-  const [updates, setUpdates] = useState(getData());
+var updates = []
 
+const getData = async () => {
+  console.log("getting data");
+  updates = await supabase.from("updates").select("*");
+  // return updates
+};
+
+export default function Home() {
+  const [updatesFromDB, setUpdates] = useState([]);
+  // setUpdates(getData())
+  getData()
+  useEffect(() => {
+    setUpdates(updates)
+  }, [updatesFromDB])
+  
+
+  
   return (
     <div>
       <Header tab="Updates" />
       <div className="flex items-center justify-center flex-col bg-[#001220] text-white pb-28">
         <div className="mt-8 mb-8 text-3xl">Latest News</div>
-        {updates == undefined ? (
+        {updates == [] ? (
           <Loader />
         ) : (
           <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-3 gap-8 m-auto mx-5 max-w-4xl">
             <div className="md:col-start-1 md:col-span-2 md:row-start-1 md:row-span-1">
               <LargePostStreamCard data={latestNews} />
             </div>
-            {updates.map((item, key) => (
+            {updatesFromDB.map((item, key) => (
               <SmallPostStreamCard
                 key={key}
                 className="px-4 py-6 sm:px-0"
