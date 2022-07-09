@@ -123,7 +123,7 @@ export default function OurProjects() {
     <div className="bg-[#001220] text-white">
       <Header tab={"Our Projects"} />
       <div
-        className={`bg-[#0d81fe] h-[60vh] w-full flex flex-col items-center justify-center text-white z-0 relative`}
+        className="bg-[#0d81fe] h-[60vh] w-full flex flex-col items-center justify-center text-white z-0 relative"
       >
         <div className="text-center mb-28 mt-16">
           <p className="text-4xl sm:text-7xl mb-20">Our Projects</p>
@@ -247,7 +247,7 @@ export default function OurProjects() {
           initial="hidden"
           whileInView="visible"
           variants={frameworkDividngLineVariants}
-          className="w-[70vw] h-[1px] bg-slate-400 mt-20 mb-20"
+          className="w-[70vw] h-[1px] bg-slate-400 md:mt-20 md:mb-20"
         />
       </div>
 
@@ -278,7 +278,7 @@ export default function OurProjects() {
         />
       </div>
 
-      <div>
+      <div className="pb-20">
         <h1 ref={reactRef} className="mt-11 mb-10 lg:mt-0 text-center text-4xl">
           React JS
         </h1>

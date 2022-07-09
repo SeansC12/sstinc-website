@@ -77,11 +77,11 @@ function Project({ projectInfo }) {
   };
 
   if (getWindowDimensions().width < 640) {
-    imageWidth = 280;
-    imageHeight = 294;
+    imageWidth = 250;
+    imageHeight = 250;
   } else {
-    imageWidth = 580;
-    imageHeight = 594;
+    imageWidth = 450;
+    imageHeight = 450;
   }
 
   return (
@@ -103,12 +103,12 @@ function Project({ projectInfo }) {
           isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
         }
         variants={imageVariant}
-        className="object-cover mb-4 sm:mb-10 rounded-xl"
+        className="object-cover mb-2 sm:mb-4 rounded-xl"
         width={imageWidth}
         height={imageHeight}
         src={imageLink}
       />
-      <h1 className="text-3xl mb-2 lg:text-5xl sm:mb-6">{name}</h1>
+      <h1 className="text-3xl mb-3 lg:text-4xl">{name}</h1>
       <div className="flex flex-row relative">
         <motion.div
           initial={false}
@@ -125,7 +125,7 @@ function Project({ projectInfo }) {
               isMouseHoveringOnProject ? "mouseHovering" : "mouseNotHovering"
             }
             variants={textVariant}
-            className="text-base lg:text-lg mb-2"
+            className="text-base lg:text-lg mb-1"
           >
             {description}
           </motion.h2>
