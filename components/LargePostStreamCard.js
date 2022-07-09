@@ -78,7 +78,7 @@ function LargePostStreamCard({ data }) {
             exit={{ opacity: 0, transition: { duration: 0.8 } }}
             className="h-full relative flex items-center justify-center"
           >
-            <div className="text-center text-lg sm:text-2xl font-semibold py-12 px-7">
+            <div className="text-center font-lato text-lg sm:text-2xl font-semibold py-12 px-7">
               {data.description}
             </div>
           </motion.div>
@@ -98,7 +98,7 @@ function LargePostStreamCard({ data }) {
             <div className="uppercase tracking-wide text-sm font-medium">
               {data.genre}
             </div>
-            <p className="mt-2 text-lg sm:text-2xl font-semibold">
+            <p className="mt-2 font-lato text-lg sm:text-2xl font-semibold">
               {data.title}
             </p>
             <div className="absolute top-[430px] uppercase tracking-wide text-sm font-medium">

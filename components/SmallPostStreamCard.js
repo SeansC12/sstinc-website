@@ -84,7 +84,7 @@ function SmallPostStreamCard({ data }) {
                   transition: { duration: 0.5, delay: 0.7 },
                 }}
                 exit={{ opacity: 0, transition: { duration: 0.5 } }}
-                className="mt-2 text-white text-lg sm:text-2xl font-semibold"
+                className="mt-2 text-white font-lato text-lg sm:text-2xl font-semibold"
               >
                 {data.description}
               </motion.p>
@@ -99,7 +99,7 @@ function SmallPostStreamCard({ data }) {
                   transition: { duration: 0.5, delay: 0.7 },
                 }}
                 exit={{ opacity: 0, transition: { duration: 0.5 } }}
-                className="mt-2 text-white text-lg sm:text-2xl font-semibold"
+                className="mt-2 text-white font-lato text-lg sm:text-2xl font-semibold"
               >
                 {data.title}
               </motion.p>

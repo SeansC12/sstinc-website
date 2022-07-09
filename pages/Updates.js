@@ -58,7 +58,7 @@ export default function Home() {
     <div>
       <Header tab="Updates" />
       <div className="flex items-center justify-center flex-col bg-[#001220] text-white pb-28">
-        <div className="mt-8 mb-8 text-3xl">Latest News</div>
+        <div className="mt-8 mb-8 text-3xl font-lato">Latest News</div>
         <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-3 gap-8 m-auto mx-5 max-w-4xl">
           <div className="md:col-start-1 md:col-span-2 md:row-start-1 md:row-span-1">
             <LargePostStreamCard data={latestNews} />
