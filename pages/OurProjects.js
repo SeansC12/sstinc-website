@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { motion } from "framer-motion";
 import Project from "../components/Project";
 import getWindowDimensions from "../hooks/getWindowDimensions";
+import Footer from "../components/Footer"
 import info from "../public/info.json"
 
 const projects = info.OurProjects
@@ -224,7 +225,7 @@ export default function OurProjects() {
       </div>
       {/* bg-no-repeat bg-center bg-cover */}
 
-      <div className="aspect-[1440/260] w-full h-260px bg-[url('../svg/layered-waves-4.svg')]" />
+      <div className="aspect-[1440/260] w-full h-260px bg-[url('../svg/layered-waves-4.svg')] bg-cover" />
 
       <div>
         <h1 ref={iosRef} className="mt-11 mb-10 lg:mt-0 text-center text-4xl">
@@ -291,6 +292,7 @@ export default function OurProjects() {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
