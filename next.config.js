@@ -11,6 +11,8 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "cdn.vox-cdn.com",
     ],
+    loader: "akamai",
+    path: ""
   },
 };
 
