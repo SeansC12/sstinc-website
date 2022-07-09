@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-800 text-white h-screen md:h-[50vh]">
+    <footer className="bg-slate-800 text-white h-fit md:h-[50vh]">
       <div className="w-full p-10 h-full justify-center md:flex grid grid-cols-1 place-items-center">
         <div className="w-full md:w-1/2 grid space-y-1 h-fit justify-center text-center">
           <h1 className="text-4xl mb-3">SST Inc HQ</h1>
