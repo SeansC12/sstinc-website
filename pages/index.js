@@ -1,10 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
 import Link from "next/link";
-import "../public/androidLogo.svg";
-import "../public/reactLogo.svg";
-import "../public/swiftLogo.png";
-import "../public/homeWaves.svg";
 import Footer from "../components/Footer";
 import { motion, LayoutGroup } from "framer-motion";
 import { useState } from "react";
