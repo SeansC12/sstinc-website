@@ -224,7 +224,7 @@ export default function OurProjects() {
       </div>
       {/* bg-no-repeat bg-center bg-cover */}
 
-      <div className="aspect-[1440/260] w-full h-260px bg-[url('../svg/layered-waves-4.svg')]" />
+      <div className="aspect-[1440/260] w-full h-260px bg-[url('../svg/layered-waves-4.svg')] bg-cover" />
 
       <div>
         <h1 ref={iosRef} className="mt-11 mb-10 lg:mt-0 text-center text-4xl">
