@@ -2,13 +2,12 @@ import React, { useState, useRef } from "react";
 import Header from "../components/Header";
 import { motion } from "framer-motion";
 import Project from "../components/Project";
-import Footer from "../components/Footer";
 import getWindowDimensions from "../hooks/getWindowDimensions";
 import info from "../public/info.json"
 
 const projects = info.OurProjects
 
-function OurProjects() {
+export default function OurProjects() {
   const gradientColourScheme =
     "bg-gradient-to-r from-[#0d81fe] via-[#0bc3f0] to-[#00f9e2]";
 
@@ -295,5 +294,3 @@ function OurProjects() {
     </div>
   );
 }
-
-export default OurProjects;
