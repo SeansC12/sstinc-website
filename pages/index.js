@@ -10,7 +10,7 @@ import "../public/reactLogo.svg";
 import "../public/swiftLogo.png";
 import "../public/homeWaves.svg";
 import Footer from "../components/Footer";
-import { motion } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion";
 import { useState } from "react";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 
@@ -18,23 +18,28 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-
 const courses = [
   {
     name: "ReactJS",
+    title: "Javascript",
     image: "reactLogo.svg",
+    color: "#61DAFB",
     description:
       "ReactJS is a javascript library used to build incredible user experience focused web pages",
   },
   {
     name: "iOS",
+    title: "Swift",
     image: "swiftLogo.png",
+    color: "#D12E13",
     description:
       "iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad iOS is bad bad ",
   },
   {
     name: "Android",
+    title: "Java",
     image: "androidLogo.svg",
+    color: "#A4C639",
     description:
       "android is eh?android is eh?android is eh?android is eh?android is eh?android is eh?android is eh?",
   },
@@ -45,7 +50,7 @@ const careerStages = [
     header: "Trainee",
     subHeader: "ReactJS, iOS, and Android Development",
     description:
-      "In Secondary 1, all students may sign up to join SST Inc. as a trainee. They will undergo training in Swift and develop iOS apps using Xcode. Students will also undergo training for React Native, to be able to develop iOS and Android apps. The trainees are expected to apply their learning at the end of the course by developing an app.",
+      "Trainees will undergo a vigorous training of UI development to make great visual elements for their apps to suit differ users and their functionality. They will also learn to code in Androids apps so that they will be able to release both IOS and Android apps which will cater to all mobile phone users. This will mark the end of their time as a trainee as they prepare to face the real world",
   },
   {
     header: "Associate Employee Startup Incubation",
@@ -81,94 +86,129 @@ export default function Home() {
     <div>
       <Header tab="Home" />
       <main>
-        <div>
-          <img
+        <div className="h-fit sm:h-screen bg-[url(../public/homeWaves.svg)] bg-cover">
+          {/* <img
             src="homeWaves.svg"
-            className="w-full h-screen object-cover absolute"
-          />
+            className="w-full h-full object-cover absolute"
+          /> */}
           <div className="relative">
-            <div className="items-center h-screen pb-20 flex justify-center">
-              <div className=" h-fit grid place-items-center space-y-0">
+            <div className="items-center h-fit pb-20 flex justify-center">
+              <div className="md:mt-20 h-fit grid place-items-center space-y-0">
                 <motion.img
-                  className="h-40 mb-10"
+                  className="h-40 m-10"
                   src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no"
                   animate={{ scale: 1.4 }}
                   transition={{ delay: 0.1, type: "spring" }}
                 ></motion.img>
+                <p className="w-5/6 sm:w-1/2 p-10 text-center bg-slate-200 rounded-xl bg-opacity-80 font-mono font-semibold  sm:text-xl">
+                  SST Inc. is the technology Talent Development Programme in the
+                  School of Science and Technology, Singapore. SST Inc. is an
+                  incubator that nurtures student employees in running
+                  technology start-ups to serve communities and better our
+                  world.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="h-screen bg-gradient-to-b from-[#DC4267] to-[#DC4267] flex justify-center items-center relative -mt-14 font-sans">
+        <div className="h-fit bg-[#FA7268] flex justify-center items-center relative font-mono">
           <div className="grid place-items-center">
             <motion.h1
               whileInView={{ scale: 1.3 }}
               transition={{ duration: 0.5 }}
-              className="w-fit text-4xl text-gray-100"
+              className="w-fit mt-10 text-xl sm:text-3xl text-gray-100 font-lato"
             >
-              Our Courses
+              Course Options
             </motion.h1>
 
-            <div className="flex text-center">
-              {courses.map((course) => {
-                let index = courses.indexOf(course);
-                return (
-                  <motion.p
-                    key={course.name}
-                    className={`m-10 w-20 text-2xl cursor-pointer`}
-                    whileHover={{ scale: 1.1 }}
-                    // animate={{font: currentCourseIndex == index ? "bold" : "normal"}}
-                    animate={{
-                      fontWeight:
-                        currentCourseIndex == index ? "bold" : "normal",
-                      scale: currentCourseIndex == index ? 1.1 : 1,
-                    }}
-                    onClick={() => setCurrentCourseIndex(index)}
-                  >
-                    {course.name}
-                  </motion.p>
-                );
-              })}
-            </div>
-            <div className="grid place-items-center">
-              <h1 className="text-2xl">{courses[currentCourseIndex].name}</h1>
+            <LayoutGroup>
+              <ol className="grid grid-cols-3 place-items-center w-full font-lato m-5 my-10 sm:w-1/2">
+                {courses.map((course, i) => {
+                  return (
+                    <motion.li
+                      key={i}
+                      onClick={() => {
+                        setCurrentCourseIndex(i);
+                      }}
+                      className="text-center sm:text-xl w-fit cursor-pointer text-[5vw]"
+                      animate={{
+                        scale: currentCourseIndex == i ? 1.3 : 1,
+                        color: currentCourseIndex == i ? course.color : "#333",
+                      }}
+                      whileHover={{ color: course.color }}
+                    >
+                      {course.name}
+                      {currentCourseIndex == i && (
+                        <motion.div
+                          className={`h-1 rounded-full w-10/12 m-auto`}
+                          style={{ backgroundColor: course.color }}
+                          layoutId="underline"
+                        ></motion.div>
+                      )}
+                    </motion.li>
+                  );
+                })}
+              </ol>
+            </LayoutGroup>
+
+            <div className="w-full font-mono text-center">
+              <p className="text-2xl mx-auto">
+                {courses[currentCourseIndex].title}
+              </p>
               <img
                 src={courses[currentCourseIndex].image}
-                className="h-96 p-10"
+                className="h-[30vh] mx-auto m-10"
               ></img>
-              <p className="text-xl font-source_code_pro sm:w-[40vw] text-center text-gray-300">
+              <p className="text-xl w-11/12 md:w-1/2 text-center text-white mb-28 mx-auto">
                 {courses[currentCourseIndex].description}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-[#001220] h-screen items-center flex justify-center">
-          <div className="w-[60vw] h-[60vh] p-10  rounded-[30px] bg-white flex items-center justify-centre">
-            <button
-              onClick={() => {
-                // console.log(divDimension)
-                setCurrentStage((x) =>
-                  x == 0 ? (x = careerStages.length - 1) : x - 1
-                );
-              }}
-              className="p-2 bg-orange-300 rounded-full text-3xl text-center m-2 ml-5"
-            >
-              <RiArrowLeftSLine className="w-8 h-8" />
-            </button>
-
-            <div className="w-full text-center font-mono px-10 h-[80%]">
-              <div className="h-full">
-                <p className="text-3xl font-semibold text-[#DC4267]">
+        {/* <div className="bg-[#001220] h-screen items-center flex justify-center">
+          <div className="w-[90vw] lg:w-[60vw] h-[70vh] rounded-[30px] bg-white flex items-center justify-centre">
+            <div className="w-full text-center font-mono h-[80%]  items-center">
+              <div className="h-full items-center sm:pt-5">
+                <p className="text-xl md:text-3xl font-semibold text-[#DC4267]">
                   {currentStage + 1}. {careerStages[currentStage].header}
                 </p>
-                <p className="text-2xl m-10">
-                  {careerStages[currentStage].subHeader}
+                <div className="text-xl sm:text-2xl p-2 sm:p-5 flex justify-center items-center w-full">
+                  <button
+                    onClick={() => {
+                      // console.log(divDimension)
+                      setCurrentStage((x) =>
+                        x == 0 ? (x = careerStages.length - 1) : x - 1
+                      );
+                    }}
+                    className="p-2 bg-orange-300 rounded-full text-3xl text-center m-2 mr-auto"
+                  >
+                    <RiArrowLeftSLine className="w-8 h-8" />
+                  </button>
+                  <p className="sm:mx-10">
+                    {careerStages[currentStage].subHeader}
+                  </p>
+                  <button
+                    onClick={() =>
+                      setCurrentStage((x) =>
+                        x == careerStages.length - 1 ? 0 : x + 1
+                      )
+                    }
+                    className="p-2 bg-orange-300 rounded-full text-3xl text-centre m-2 ml-auto"
+                  >
+                    <RiArrowRightSLine className="w-8 h-8" />
+                  </button>
+                </div>
+                <p
+                  className="text-[] md:text-base px-2 sm:px-10"
+                  // style={{ fontSize: "calc(1vh + 1vw)" }}
+                  // style={{fontSize: "100%"}}
+                >
+                  {careerStages[currentStage].description}
                 </p>
-                <p>{careerStages[currentStage].description}</p>
               </div>
-              <div className="h-fit w-full mb-0 flex justify-center items-center mt-10 relative">
+              <div className="h-12 w-11/12 md:mt-0 flex justify-center items-center relative px-10 mx-auto pb-10">
                 <div className="shadow h-1 w-full">
                   <motion.div
                     className="bg-orange-300 h-1 w-[25%]"
@@ -183,21 +223,19 @@ export default function Home() {
                       <motion.div
                         key={stage}
                         className={classNames(
-                          "h-10 w-10 shadow-2xl grid place-items-center rounded-full cursor-pointer",
+                          "h-10 w-10 border-2 border-orange-300 text-black shadow-2xl grid place-items-center rounded-full cursor-pointer ",
                           stage == 0
                             ? "mr-auto"
                             : stage == 4
                             ? "ml-auto"
-                            : "mx-auto",
-                          currentStage >= stage
-                            ? "border-orange-300 text-white"
-                            : " border-2  text-black"
+                            : "mx-auto"
                         )}
                         animate={{
                           backgroundColor:
                             stage <= currentStage
                               ? ["rgb(255,255,255)", "rgb(253, 186, 116)"]
                               : ["rgb(255, 255, 255)", "rgb(255,255,255)"],
+                          color: stage <= currentStage ? "#fff" : "#696969",
                         }}
                         transition={{ duration: 0.5 }}
                         onClick={() => setCurrentStage(stage)}
@@ -209,20 +247,83 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <button
-              onClick={() =>
-                setCurrentStage((x) =>
-                  x == careerStages.length - 1 ? 0 : x + 1
-                )
-              }
-              className="p-2 bg-orange-300 rounded-full text-3xl text-centre m-2 mr-5"
-            >
-              <RiArrowRightSLine className="w-8 h-8" />
-            </button>
+          </div>
+        </div> */}
+
+        {/* career stages part */}
+        <div className="w-full bg-[#001220] flex justify-center">
+          <div className="text-center h-fit py-10 sm:py-28 lg:py-36 w-11/12 md:w-1/2 grid">
+            <p className="text-[#DC4267] font-bold font-mono text-3xl">
+              {currentStage + 1}. {careerStages[currentStage].header}
+            </p>
+            <div className="flex justify-center w-full">
+              <button
+                onClick={() => {
+                  // console.log(divDimension)
+                  setCurrentStage((x) =>
+                    x == 0 ? (x = careerStages.length - 1) : x - 1
+                  );
+                }}
+              >
+                <RiArrowLeftSLine className="bg-orange-300 h-10 w-10 rounded-full text-3xl text-white" />
+              </button>
+              <p className="text-white text-2xl font-lato py-10 px-4 sm:p-10">
+                {careerStages[currentStage].subHeader}
+              </p>
+              <button
+                onClick={() =>
+                  setCurrentStage((x) =>
+                    x == careerStages.length - 1 ? 0 : x + 1
+                  )
+                }
+              >
+                <RiArrowRightSLine className="bg-orange-300 h-10 w-10 rounded-full text-3xl text-white" />
+              </button>
+            </div>
+            <p className="text-white font-mono text-sm sm:text-base">
+              {careerStages[currentStage].description}
+            </p>
+
+            {/* animated progress bar thing */}
+            <div className="h-12 w-11/12 mt-10 flex justify-center items-center relative px-10 mx-auto pb-10">
+              <div className="shadow-xl h-1 w-full bg-gray-200">
+                <motion.div
+                  className="bg-orange-300 h-1 w-[25%]"
+                  animate={{ scaleX: currentStage, originX: 0 }}
+                  initial={{ scaleX: 0 }}
+                  transition={{ duration: 0.5 }}
+                ></motion.div>
+              </div>
+              <div className="flex absolute w-full justify-center">
+                {careerStages.map((info, stage) => {
+                  return (
+                    <motion.div
+                      key={stage}
+                      className="h-10 w-10 border-2 border-orange-300 text-black shadow-2xl grid place-items-center rounded-full cursor-pointer "
+                      style={{
+                        marginRight: stage != careerStages.length - 1 && "auto",
+                        marginLeft: stage != 0 && "auto",
+                      }}
+                      animate={{
+                        backgroundColor:
+                          stage <= currentStage
+                            ? ["rgb(255,255,255)", "rgb(253, 186, 116)"]
+                            : ["rgb(253, 186, 116)", "rgb(255,255,255)"],
+                        color: stage <= currentStage ? "#fff" : "#696969",
+                      }}
+                      transition={{ duration: 0.5 }}
+                      onClick={() => setCurrentStage(stage)}
+                    >
+                      {stage + 1}
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </main>
-      {/* <Footer className="absolute" /> */}
+      <Footer className="absolute" />
     </div>
   );
 }

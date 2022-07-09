@@ -9,6 +9,7 @@ module.exports = {
         courier_prime: "Courier Prime",
         source_code_pro: "Source Code Pro",
         roboto: "Roboto",
+        lato: "Lato"
       },
     },
   },
