@@ -2,9 +2,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LargePostStreamCard from "../components/LargePostStreamCard";
 import SmallPostStreamCard from "../components/SmallPostStreamCard";
-import { createClient } from "@supabase/supabase-js";
-import { useEffect, useState } from "react";
-import Loader from "../components/Loader";
 
 const postStream = [
   {
