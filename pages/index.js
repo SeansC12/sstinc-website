@@ -153,7 +153,7 @@ export default function Home() {
             </LayoutGroup>
 
             <div className="w-full font-mono text-center">
-              <p className="text-2xl mx-auto">
+              <p className="text-white text-2xl mx-auto">
                 {courses[currentCourseIndex].title}
               </p>
               <img
