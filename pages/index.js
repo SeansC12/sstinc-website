@@ -1,9 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import "../public/homeTopImg.jpeg";
-import "../public/homeBottomImg.jpeg";
-import "../public/im1.png";
-import "../public/projectSFIMg.jpeg";
 import Link from "next/link";
 import "../public/androidLogo.svg";
 import "../public/reactLogo.svg";
