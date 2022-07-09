@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { motion } from "framer-motion";
 import Project from "../components/Project";
 import getWindowDimensions from "../hooks/getWindowDimensions";
+import Footer from "../components/Footer"
 import info from "../public/info.json"
 
 const projects = info.OurProjects
@@ -291,6 +292,7 @@ export default function OurProjects() {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
