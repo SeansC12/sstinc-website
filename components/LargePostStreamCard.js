@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useOutsideClickAlerter from "../hooks/useOutsideClickAlerter";
 
-function LargePostStreamCard({ data }) {
+function LargePostStreamCard({ data, isMouseClicked }) {
   let [isMouseHoveringOnCard, setIsMouseHoveringOnCard] = useState();
   let [isMouseClicked, setIsMouseClicked] = useState(false);
   const descriptionRef = useRef();

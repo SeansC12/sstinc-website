@@ -4,34 +4,34 @@ import Image from "next/image";
 import Person from "../components/Person";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import info from "../public/info.json"
-
-const DreamTeam = info.AboutUs.DreamTeam;
-
-
-const lineSeparationVariant = {
-  hidden: {
-    scale: 0,
-  },
-  visible: {
-    scale: 1,
-    transition: {
-      type: "tween",
-      duration: 0.8,
-    },
-  },
-};
-
-const indivTeamElement = [];
-for (const division in DreamTeam) {
-  for (const member in DreamTeam[division]) {
-    indivTeamElement.push(<Person personInfo={DreamTeam[division][member]} />);
-  }
-}
+import { Team } from "../public/data";
 
 export default function TheTeam() {
   const image2 = `https://picsum.photos/2000/2000`;
   const parallaxBannerRef = useRef();
+
+  const DreamTeam = Team;
+  const indivTeamElement = [];
+  for (const division in DreamTeam) {
+    for (const member in DreamTeam[division]) {
+      indivTeamElement.push(
+        <Person personInfo={DreamTeam[division][member]} />
+      );
+    }
+  }
+  const lineSeparationVariant = {
+    hidden: {
+      scale: 0,
+    },
+    visible: {
+      scale: 1,
+      transition: {
+        type: "tween",
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
     <div className="bg-[#001220] text-white">
       <Header tab={"The Team"} />
