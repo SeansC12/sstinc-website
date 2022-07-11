@@ -50,8 +50,8 @@ function SmallPostStreamCard({ data }) {
         if (!isMouseClicked) setIsMouseHoveringOnCard(false);
       }}
       onClick={() => {
-        setIsMouseClicked(true);
-        setIsMouseHoveringOnCard(true);
+        setIsMouseClicked((curr) => !curr);
+        setIsMouseHoveringOnCard((curr) => !curr);
       }}
       variants={postStreamCardVariants}
       ref={descriptionRef}

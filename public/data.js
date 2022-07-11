@@ -46,7 +46,7 @@ export const Team = {
       imageURL: "",
     },
     Aathithya: {
-      name: "Aathithya Jagatheesan",
+      name: "Aathithya Jegatheesan",
       position: "CMO",
       imageURL: "",
     },
