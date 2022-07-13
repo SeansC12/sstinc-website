@@ -22,16 +22,6 @@
           "position": "iOS ACTO",
           "imageURL": ""
         },
-        "Lohith": {
-          "name": "Lohith",
-          "position": "iOS Task Force",
-          "imageURL": ""
-        },
-        "EnJie": {
-          "name": "Tham En Jie",
-          "position": "iOS Task Force",
-          "imageURL": ""
-        },
         "Harish": {
           "name": "Harish",
           "position": "React CTO",
@@ -40,11 +30,6 @@
         "Sean": {
           "name": "Sean Ulric Chua",
           "position": "React ACTO",
-          "imageURL": ""
-        },
-        "Sairam": {
-          "name": "Sairam Suresh",
-          "position": "React Task Force",
           "imageURL": ""
         },
         "Aathithya": {
@@ -60,6 +45,23 @@
         "Ayaan": {
           "name": "Ayaan Jain",
           "position": "ACAO",
+          "imageURL": ""
+        }
+      },
+      "Taskforce": {
+        "Sairam": {
+          "name": "Sairam Suresh",
+          "position": "React Task Force",
+          "imageURL": ""
+        },
+        "Lohith": {
+          "name": "Lohith",
+          "position": "iOS Task Force",
+          "imageURL": ""
+        },
+        "EnJie": {
+          "name": "Tham En Jie",
+          "position": "CAO Task Force",
           "imageURL": ""
         }
       },

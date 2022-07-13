@@ -4,10 +4,10 @@ import Image from "next/image";
 import Person from "../components/Person";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import info from "../public/info.json"
+import info from "../public/info.json";
+import "../public/incLogo.png"
 
 const DreamTeam = info.AboutUs.DreamTeam;
-
 
 const lineSeparationVariant = {
   hidden: {
@@ -38,7 +38,7 @@ export default function TheTeam() {
 
       <center>
         <Image
-          src="https://lh3.googleusercontent.com/pw/AM-JKLVw9lw63jPNMUAzRQsWbAhYP5_OprYt-iIP7cLvvQ45mCTii6-WB-Q26vHMzMMpb7rjo25KxSJLm_O8cXvS8G8SDQYDf9UD74ppxNegrgyD2D6KAkdmV0bJU98rqjlDb_x79vgPB6crSOKYjvqFmMOR=s1000-no?authuser=0"
+          src="incLogo.png"
           width={180}
           height={180}
         />
@@ -58,6 +58,17 @@ export default function TheTeam() {
             return <div key={key}>{personElement}</div>;
           })}
         </div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={lineSeparationVariant}
+          className="w-[70vw] h-[1px] bg-slate-400 mt-24"
+        />
+
+        <h1 className="text-5xl mt-24 mb-5 font-mono font-semibold">
+          Taskforce
+        </h1>
         <div className="grid lg:grid-cols-3 w-fit">
           {indivTeamElement.slice(9, 12).map((personElement, key) => {
             return <div key={key}>{personElement}</div>;
@@ -74,7 +85,7 @@ export default function TheTeam() {
         <h1 className="text-5xl mt-24 mb-5 font-mono font-semibold">
           Board of Directors
         </h1>
-        <div className="grid lg:grid-cols-4 m-10">
+        <div className="grid lg:grid-cols-4 m-10 mb-40">
           {indivTeamElement.slice(12, 17).map((personElement, key) => {
             return <div key={key}>{personElement}</div>;
           })}
