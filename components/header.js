@@ -102,20 +102,21 @@ export default function Header({ tab }) {
               <Disclosure.Panel className="sm:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   {navigation.map((item) => (
-                    <Disclosure.Button
-                      key={item.name}
-                      as="a"
-                      href={item.href}
-                      className={classNames(
-                        item.current
-                          ? "bg-gray-800 text-white"
-                          : "text-gray-800 hover:bg-gray-700 hover:text-white",
-                        "block px-3 py-2 rounded-md text-base font-medium"
-                      )}
-                      aria-current={item.current ? "page" : undefined}
-                    >
-                      {item.name}
-                    </Disclosure.Button>
+                    <Link href={item.href}>
+                      <Disclosure.Button
+                        key={item.name}
+                        as="a"
+                        className={classNames(
+                          item.current
+                            ? "bg-gray-800 text-white"
+                            : "text-gray-800 hover:bg-gray-700 hover:text-white",
+                          "block px-3 py-2 rounded-md text-base font-medium"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.name}
+                      </Disclosure.Button>
+                    </Link>
                   ))}
                 </div>
               </Disclosure.Panel>
@@ -216,4 +217,3 @@ function f() {
     </div>
   );
 }
-
