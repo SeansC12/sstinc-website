@@ -101,9 +101,8 @@ export default function Header({ tab }) {
               <Disclosure.Panel className="sm:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   {navigation.map((item) => (
-                    <Link href={item.href}>
+                    <Link key={item.name} href={item.href}>
                       <Disclosure.Button
-                        key={item.name}
                         as="a"
                         className={classNames(
                           item.current
