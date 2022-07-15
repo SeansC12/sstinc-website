@@ -4,13 +4,10 @@ import { motion } from "framer-motion";
 import Project from "../components/Project";
 import getWindowDimensions from "../hooks/getWindowDimensions";
 import Footer from "../components/Footer";
-import info from "../public/info.json";
-
-const projects = info.OurProjects;
+import { Projects } from "../public/data";
 
 export default function OurProjects() {
-  const gradientColourScheme =
-    "bg-gradient-to-r from-[#0d81fe] via-[#0bc3f0] to-[#00f9e2]";
+  const projects = Projects;
 
   let [iosUnderline, setIOSUnderline] = useState(false);
   const iosRef = useRef();
@@ -141,7 +138,9 @@ export default function OurProjects() {
                 onClick={executeIOSScroll}
               >
                 <div className="inline-block">
-                  <p className="text-base sm:text-2xl">iOS App Development</p>
+                  <p className="text-base font-medium sm:text-2xl">
+                    iOS App Development
+                  </p>
                   {getWindowDimensions().width <= 640 ? (
                     <div className="border border-white" />
                   ) : (
@@ -171,7 +170,7 @@ export default function OurProjects() {
                 onClick={executeAndroidScroll}
               >
                 <div className="inline-block">
-                  <p className="text-base sm:text-2xl">
+                  <p className="text-base font-medium sm:text-2xl">
                     Android App Development
                   </p>
                   {getWindowDimensions().width <= 640 ? (
@@ -203,7 +202,7 @@ export default function OurProjects() {
                 onClick={executeReactScroll}
               >
                 <div className="inline-block">
-                  <p className="text-base sm:text-2xl">React JS</p>
+                  <p className="text-base font-medium sm:text-2xl">React JS</p>
                   {getWindowDimensions().width <= 640 ? (
                     <div className="border border-white" />
                   ) : (

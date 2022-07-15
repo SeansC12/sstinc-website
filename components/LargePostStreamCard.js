@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useOutsideClickAlerter from "../hooks/useOutsideClickAlerter";
 
-function LargePostStreamCard({ data }) {
+function LargePostStreamCard({ data, didMouseClick }) {
   let [isMouseHoveringOnCard, setIsMouseHoveringOnCard] = useState();
   let [isMouseClicked, setIsMouseClicked] = useState(false);
   const descriptionRef = useRef();
@@ -11,6 +11,8 @@ function LargePostStreamCard({ data }) {
     setIsMouseClicked(false);
     setIsMouseHoveringOnCard(false);
   }, descriptionRef);
+
+  console.log(isMouseClicked);
 
   const postStreamCardVariants = {
     mouseHovering: {
@@ -50,8 +52,8 @@ function LargePostStreamCard({ data }) {
         if (!isMouseClicked) setIsMouseHoveringOnCard(false);
       }}
       onClick={() => {
-        setIsMouseClicked(true);
-        setIsMouseHoveringOnCard(true);
+        setIsMouseClicked((curr) => !curr);
+        setIsMouseHoveringOnCard((curr) => !curr);
       }}
       variants={postStreamCardVariants}
       ref={descriptionRef}
