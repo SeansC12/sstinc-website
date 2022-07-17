@@ -244,11 +244,11 @@ export default function Home() {
 
         {/* career stages part */}
         <div className="w-full bg-[#001220] flex justify-center">
-          <div className="text-center h-fit py-10 sm:py-28 lg:py-36 w-11/12 md:w-1/2 grid">
+          <div className="text-center h-fit py-10 sm:py-28 lg:py-36 w-11/12 md:w-1/2 grid place-items-center">
             <p className="text-[#DC4267] font-bold font-mono text-3xl">
               {currentStage + 1}. {careerStages[currentStage].header}
             </p>
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-11/12 sm:w-3/4">
               <button
                 onClick={() => {
                   // console.log(divDimension)
@@ -259,7 +259,7 @@ export default function Home() {
               >
                 <RiArrowLeftSLine className="bg-orange-300 h-10 w-10 rounded-full text-3xl text-white" />
               </button>
-              <p className="text-white text-2xl font-lato py-10 px-4 sm:p-10">
+              <p className="text-white text-2xl font-lato py-10 px-4 sm:p-10 w-full">
                 {careerStages[currentStage].subHeader}
               </p>
               <button
