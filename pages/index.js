@@ -241,7 +241,9 @@ export default function Home() {
             </div>
           </div>
         </div> */}
-
+        <div className="hidden">
+          <Link href="/rickroll">interesting?</Link>
+        </div>
         {/* career stages part */}
         <div className="w-full bg-[#001220] flex justify-center">
           <div className="text-center h-fit py-10 sm:py-28 lg:py-36 w-11/12 md:w-1/2 grid place-items-center">
