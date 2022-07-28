@@ -1,7 +1,7 @@
 {
   "AboutUs": {
     "DreamTeam": {
-      "EXCO": {
+            "EXCO": {
         "XuanHan": {
           "name": "Tan Xuan Han",
           "position": "President",
@@ -12,43 +12,53 @@
           "position": "Vice-President",
           "imageURL": ""
         },
-        "Kai": {
-          "name": "Tay Kai Quan",
-          "position": "iOS CTO",
-          "imageURL": ""
-        },
-        "Luke": {
-          "name": "Luke Yeo",
-          "position": "iOS ACTO",
-          "imageURL": ""
-        },
-        "Harish": {
-          "name": "Harish",
-          "position": "React CTO",
-          "imageURL": ""
-        },
-        "Sean": {
-          "name": "Sean Ulric Chua",
-          "position": "React ACTO",
-          "imageURL": ""
-        },
-        "Aathithya": {
-          "name": "Aathithya Jagatheesan",
-          "position": "CMO",
-          "imageURL": ""
-        },
         "Daksh": {
           "name": "Daksh Thapar",
-          "position": "CAO",
+          "position": "Chief Admin Officer",
           "imageURL": ""
         },
         "Ayaan": {
           "name": "Ayaan Jain",
-          "position": "ACAO",
+          "position": "Assistant Chief Admin Officer",
+          "imageURL": ""
+        }
+         "Gao En": {
+          "name": "Neo Gao En",
+          "position": "Chief Technology Officer (Android)",
+          "imageURL": ""
+        },
+        "Harish": {
+          "name": "Harish Ram Baghavath",
+          "position": "Chief Technology Officer (React)",
+          "imageURL": ""
+        },
+        "Sean": {
+          "name": "Sean Ulric Chua",
+          "position": "Assistant Chief Technology Officer (React)",
+          "imageURL": ""
+        },
+        "Kai": {
+          "name": "Tay Kai Quan",
+          "position": "Chief Technology Officer (iOS)",
+          "imageURL": ""
+        },
+        "Luke": {
+          "name": "Luke Yeo",
+          "position": "Assistant Chief Technology (iOS)",
+          "imageURL": ""
+        },
+        "Aathithya": {
+          "name": "Aathithya Jagatheesan",
+          "position": "Chief Marketing Officer",
           "imageURL": ""
         }
       },
       "Taskforce": {
+        "Richard": {
+          "name": "Richard Tan",
+          "position": "Admin Task Force",
+          "imageURL": ""
+        }
         "Sairam": {
           "name": "Sairam Suresh",
           "position": "React Task Force",
@@ -57,11 +67,6 @@
         "Lohith": {
           "name": "Lohith",
           "position": "iOS Task Force",
-          "imageURL": ""
-        },
-        "EnJie": {
-          "name": "Tham En Jie",
-          "position": "CAO Task Force",
           "imageURL": ""
         }
       },
@@ -82,7 +87,7 @@
           "imageURL": ""
         },
         "Roger": {
-          "name": "Roger Yeo",
+          "name": "Robin Pang",
           "position": "Board of Director",
           "imageURL": ""
         }
