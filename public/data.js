@@ -10,41 +10,6 @@ export const Team = {
       position: "Vice-President",
       imageURL: "",
     },
-    Kai: {
-      name: "Tay Kai Quan",
-      position: "iOS CTO",
-      imageURL: "",
-    },
-    Luke: {
-      name: "Luke Yeo",
-      position: "iOS ACTO",
-      imageURL: "",
-    },
-    Lohith: {
-      name: "Lohith",
-      position: "iOS Task Force",
-      imageURL: "",
-    },
-    EnJie: {
-      name: "Tham En Jie",
-      position: "iOS Task Force",
-      imageURL: "",
-    },
-    Harish: {
-      name: "Harish",
-      position: "React CTO",
-      imageURL: "",
-    },
-    Sean: {
-      name: "Sean Ulric Chua",
-      position: "React ACTO",
-      imageURL: "",
-    },
-    Sairam: {
-      name: "Sairam Suresh",
-      position: "React Task Force",
-      imageURL: "",
-    },
     Aathithya: {
       name: "Aathithya Jegatheesan",
       position: "CMO",
@@ -58,6 +23,43 @@ export const Team = {
     Daksh: {
       name: "Daksh Thapar",
       position: "ACAO",
+      imageURL: "",
+    },
+    Kai: {
+      name: "Tay Kai Quan",
+      position: "iOS CTO",
+      imageURL: "",
+    },
+    Luke: {
+      name: "Luke Yeo",
+      position: "iOS ACTO",
+      imageURL: "",
+    },
+    Harish: {
+      name: "Harish",
+      position: "React CTO",
+      imageURL: "",
+    },
+    Sean: {
+      name: "Sean Ulric Chua",
+      position: "React ACTO",
+      imageURL: "",
+    },
+  },
+  TaskForce: {
+    Sairam: {
+      name: "Sairam Suresh",
+      position: "React Task Force",
+      imageURL: "",
+    },
+    Lohith: {
+      name: "Lohith",
+      position: "iOS Task Force",
+      imageURL: "",
+    },
+    EnJie: {
+      name: "Tham En Jie",
+      position: "iOS Task Force",
       imageURL: "",
     },
   },
@@ -77,8 +79,8 @@ export const Team = {
       position: "Board of Director",
       imageURL: "",
     },
-    Roger: {
-      name: "Roger Yeo",
+    MrPang: {
+      name: "Robin Pang",
       position: "Board of Director",
       imageURL: "",
     },
