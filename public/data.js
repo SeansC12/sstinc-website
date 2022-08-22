@@ -10,18 +10,13 @@ export const Team = {
       position: "Vice-President",
       imageURL: "",
     },
-    Aathithya: {
-      name: "Aathithya Jegatheesan",
-      position: "CMO",
+    Daksh: {
+      name: "Daksh Thapar",
+      position: "CAO",
       imageURL: "",
     },
     Ayaan: {
       name: "Ayaan Jain",
-      position: "CAO",
-      imageURL: "",
-    },
-    Daksh: {
-      name: "Daksh Thapar",
       position: "ACAO",
       imageURL: "",
     },
@@ -45,6 +40,12 @@ export const Team = {
       position: "React ACTO",
       imageURL: "",
     },
+    ,
+    Aathithya: {
+      name: "Aathithya Jegatheesan",
+      position: "CMO",
+      imageURL: "",
+    }
   },
   TaskForce: {
     Sairam: {
